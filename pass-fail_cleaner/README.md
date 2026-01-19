@@ -8,28 +8,57 @@ The script identifies lines ending with `PASS/FAIL` and determines the actual re
 
 ## Usage
 
+### Single File
+
 ```bash
 python test_result_cleaner.py <input_file> [output_file]
 ```
 
-### Arguments
-
+**Arguments:**
 - `input_file` (required): Path to the test result file to process
 - `output_file` (optional): Path where the processed file should be saved
-  - If not specified, the script will create a file named `<input_file>_cleaned.txt`
+  - If not specified, creates `<input_file>_cleaned.txt`
 
-### Examples
-
-Process a file with automatic output naming:
+**Example:**
 ```bash
 python test_result_cleaner.py test_results.txt
-# Creates: test_results_cleaned.txt
+# Creates: test_results_cleaned.txt (only if PASS/FAIL conditions exist)
+
+python test_result_cleaner.py input.txt output.txt
+# Custom output filename
 ```
 
-Process a file with custom output name:
+### Directory Processing
+
 ```bash
-python test_result_cleaner.py input.txt output_cleaned.txt
+python test_result_cleaner.py <directory> [output_directory]
+python test_result_cleaner.py -r <directory> [output_directory]
 ```
+
+**Arguments:**
+- `directory` (required): Path to directory containing log files
+- `output_directory` (optional): Where to save processed files (defaults to same location)
+- `-r` flag: Process subdirectories recursively
+
+**Examples:**
+```bash
+# Process all files in a directory (non-recursive)
+python test_result_cleaner.py /path/to/logs/
+# Creates *_cleaned.txt files in /path/to/logs/ for each file with PASS/FAIL
+
+# Process directory recursively
+python test_result_cleaner.py -r /path/to/logs/
+# Processes all files in /path/to/logs/ and subdirectories
+
+# Specify output directory
+python test_result_cleaner.py -r /path/to/logs/ /path/to/output/
+# Preserves directory structure in output location
+```
+
+**Important:**
+- Only files containing PASS/FAIL conditions are processed
+- Files without PASS/FAIL conditions are skipped (no output file created)
+- Output files are named `<original_name>_cleaned.<ext>`
 
 ## Supported Criteria Patterns
 

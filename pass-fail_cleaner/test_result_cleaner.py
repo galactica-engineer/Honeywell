@@ -5,10 +5,18 @@ Processes test result files and resolves PASS/FAIL conditions based on criteria.
 
 This script identifies lines ending with PASS/FAIL and determines the actual result
 by comparing the measured value against the expected criteria ("S/B" = Should Be).
+
+Usage:
+  Single file:    python test_result_cleaner.py input.txt [output.txt]
+  Directory:      python test_result_cleaner.py /path/to/logs/
+  Recursive:      python test_result_cleaner.py -r /path/to/logs/
+  
+Only creates output files for inputs that contain PASS/FAIL conditions.
 """
 
 import re
 import sys
+import os
 from pathlib import Path
 from typing import List, Tuple, Optional
 
@@ -42,6 +50,26 @@ class TestResultProcessor:
         if match:
             return match.group(1).strip()
         return None
+    
+    def has_pass_fail_conditions(self, file_path: str) -> bool:
+        """
+        Check if a file contains any PASS/FAIL conditions.
+        
+        Args:
+            file_path: Path to the file to check
+            
+        Returns:
+            True if file contains PASS/FAIL, False otherwise
+        """
+        try:
+            with open(file_path, 'r', encoding='utf-8', errors='replace') as f:
+                for line in f:
+                    if self.pass_fail_pattern.match(line.rstrip()):
+                        return True
+            return False
+        except Exception as e:
+            print(f"Warning: Could not check {file_path}: {e}", file=sys.stderr)
+            return False
     
     def parse_criteria(self, criteria_text: str) -> dict:
         """
@@ -414,38 +442,171 @@ class TestResultProcessor:
         return stats
 
 
+def process_directory(directory: str, recursive: bool = False, output_dir: str = None) -> dict:
+    """
+    Process all files in a directory.
+    
+    Args:
+        directory: Path to directory containing log files
+        recursive: If True, process subdirectories recursively
+        output_dir: Optional output directory (defaults to same as input)
+        
+    Returns:
+        Dictionary with processing statistics
+    """
+    processor = TestResultProcessor()
+    dir_path = Path(directory)
+    
+    if not dir_path.exists():
+        raise FileNotFoundError(f"Directory not found: {directory}")
+    
+    if not dir_path.is_dir():
+        raise ValueError(f"Not a directory: {directory}")
+    
+    # Find all files
+    if recursive:
+        files = [f for f in dir_path.rglob('*') if f.is_file()]
+    else:
+        files = [f for f in dir_path.iterdir() if f.is_file()]
+    
+    # Filter to only files with PASS/FAIL conditions
+    files_to_process = []
+    for file_path in files:
+        if processor.has_pass_fail_conditions(str(file_path)):
+            files_to_process.append(file_path)
+    
+    if not files_to_process:
+        print(f"No files with PASS/FAIL conditions found in {directory}")
+        return {'files_checked': len(files), 'files_processed': 0, 'files_skipped': len(files)}
+    
+    print(f"Found {len(files_to_process)} file(s) with PASS/FAIL conditions (out of {len(files)} total)")
+    print("=" * 60)
+    
+    total_stats = {
+        'files_checked': len(files),
+        'files_processed': 0,
+        'files_skipped': len(files) - len(files_to_process),
+        'total_instances': 0,
+        'total_passed': 0,
+        'total_failed': 0,
+        'total_unchanged': 0
+    }
+    
+    for file_path in files_to_process:
+        # Determine output path
+        if output_dir:
+            output_path = Path(output_dir)
+            # Preserve subdirectory structure if recursive
+            if recursive:
+                rel_path = file_path.relative_to(dir_path)
+                output_path = output_path / rel_path.parent
+            output_path.mkdir(parents=True, exist_ok=True)
+            output_file = output_path / f"{file_path.stem}_cleaned{file_path.suffix}"
+        else:
+            output_file = file_path.parent / f"{file_path.stem}_cleaned{file_path.suffix}"
+        
+        print(f"\nProcessing: {file_path}")
+        print(f"Output to:  {output_file}")
+        
+        try:
+            stats = processor.process_file(str(file_path), str(output_file))
+            
+            print(f"  ✓ {stats['total']} instances: {stats['passed']} PASS, {stats['failed']} FAIL, {stats['unchanged']} unchanged")
+            
+            total_stats['files_processed'] += 1
+            total_stats['total_instances'] += stats['total']
+            total_stats['total_passed'] += stats['passed']
+            total_stats['total_failed'] += stats['failed']
+            total_stats['total_unchanged'] += stats['unchanged']
+            
+        except Exception as e:
+            print(f"  ✗ Error: {e}", file=sys.stderr)
+    
+    return total_stats
+
+
 def main():
     """Main entry point for the script."""
     if len(sys.argv) < 2:
-        print("Usage: python test_result_cleaner.py <input_file> [output_file]")
+        print("Usage:")
+        print("  Single file:  python test_result_cleaner.py <input_file> [output_file]")
+        print("  Directory:    python test_result_cleaner.py <directory> [output_directory]")
+        print("  Recursive:    python test_result_cleaner.py -r <directory> [output_directory]")
         print("\nProcesses test result files to resolve PASS/FAIL conditions.")
-        print("If output_file is not specified, uses <input_file>_cleaned.txt")
+        print("Only creates output files for inputs that contain PASS/FAIL conditions.")
         sys.exit(1)
     
-    input_file = sys.argv[1]
+    # Check for recursive flag
+    recursive = False
+    arg_offset = 1
+    if sys.argv[1] == '-r':
+        recursive = True
+        arg_offset = 2
+        if len(sys.argv) < 3:
+            print("Error: -r flag requires a directory path")
+            sys.exit(1)
     
-    if len(sys.argv) >= 3:
-        output_file = sys.argv[2]
-    else:
-        # Generate output filename
-        input_path = Path(input_file)
-        output_file = str(input_path.parent / f"{input_path.stem}_cleaned{input_path.suffix}")
+    input_path = sys.argv[arg_offset]
+    output_path = sys.argv[arg_offset + 1] if len(sys.argv) > arg_offset + 1 else None
     
-    print(f"Processing: {input_file}")
-    print(f"Output to: {output_file}")
-    print("-" * 60)
+    # Determine if input is file or directory
+    path = Path(input_path)
+    
+    if not path.exists():
+        print(f"Error: Path not found: {input_path}", file=sys.stderr)
+        sys.exit(1)
     
     processor = TestResultProcessor()
     
     try:
-        stats = processor.process_file(input_file, output_file)
+        if path.is_dir():
+            # Process directory
+            print(f"Processing directory: {input_path}")
+            if recursive:
+                print("Mode: Recursive")
+            if output_path:
+                print(f"Output directory: {output_path}")
+            print("=" * 60)
+            
+            stats = process_directory(input_path, recursive, output_path)
+            
+            print("\n" + "=" * 60)
+            print("Processing complete!")
+            print(f"Files checked: {stats['files_checked']}")
+            print(f"Files processed: {stats['files_processed']}")
+            print(f"Files skipped (no PASS/FAIL): {stats['files_skipped']}")
+            if stats['files_processed'] > 0:
+                print(f"\nTotal PASS/FAIL instances: {stats['total_instances']}")
+                print(f"  - Resolved as PASS: {stats['total_passed']}")
+                print(f"  - Resolved as FAIL: {stats['total_failed']}")
+                print(f"  - Left unchanged: {stats['total_unchanged']}")
         
-        print("\nProcessing complete!")
-        print(f"Total PASS/FAIL instances found: {stats['total']}")
-        print(f"  - Resolved as PASS: {stats['passed']}")
-        print(f"  - Resolved as FAIL: {stats['failed']}")
-        print(f"  - Left unchanged: {stats['unchanged']}")
-        print(f"\nOutput written to: {output_file}")
+        else:
+            # Process single file
+            # First check if it has PASS/FAIL conditions
+            if not processor.has_pass_fail_conditions(input_path):
+                print(f"No PASS/FAIL conditions found in {input_path}")
+                print("No output file created.")
+                sys.exit(0)
+            
+            # Generate output filename if not specified
+            if output_path:
+                output_file = output_path
+            else:
+                output_file = str(path.parent / f"{path.stem}_cleaned{path.suffix}")
+            
+            print(f"Processing: {input_path}")
+            print(f"Output to: {output_file}")
+            print("-" * 60)
+            
+            stats = processor.process_file(input_path, output_file)
+            
+            print("\nProcessing complete!")
+            print(f"Total PASS/FAIL instances found: {stats['total']}")
+            print(f"  - Resolved as PASS: {stats['passed']}")
+            print(f"  - Resolved as FAIL: {stats['failed']}")
+            print(f"  - Left unchanged: {stats['unchanged']}")
+            print(f"\nOutput written to: {output_file}")
         
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)

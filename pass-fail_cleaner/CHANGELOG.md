@@ -1,6 +1,34 @@
-# Test Result Cleaner - Version 2 Updates
+# Test Result Cleaner - Changelog
 
-## Overview
+## Version 3 (Current)
+
+### New Features
+
+**Directory Processing**
+- Added ability to process entire directories of log files
+- Recursive mode (`-r` flag) to process subdirectories
+- Smart filtering: Only processes files that contain PASS/FAIL conditions
+- Files without PASS/FAIL conditions are automatically skipped (no output file created)
+- Preserves directory structure when using output directory option
+- Summary statistics for batch processing
+
+**Usage:**
+```bash
+# Single directory (non-recursive)
+python test_result_cleaner.py /path/to/logs/
+
+# Recursive processing
+python test_result_cleaner.py -r /path/to/logs/
+
+# With output directory
+python test_result_cleaner.py -r /path/to/logs/ /path/to/output/
+```
+
+---
+
+## Version 2
+
+### Overview
 
 Version 2 of the Test Result Cleaner addresses all the false failures identified in the initial version. All 90 test instances now resolve correctly.
 
