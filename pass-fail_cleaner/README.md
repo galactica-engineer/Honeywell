@@ -89,7 +89,14 @@ Example: `S/B 0 or 1 or blank` → Value must be 0, 1, or empty
 S/B in range of 0 to 255 and 0 to 255
 S/B in range of 0 to 255 and 0 to 255 or DSABLD
 ```
-Example: IP addresses or "DSABLD" for disabled networks → Always passes (complex validation)
+Example: IP addresses formatted as two 3-character octets
+
+**How it works:** The script:
+1. Parses the value as two octets (e.g., "192168" → 192 and 168)
+2. Handles variable widths: "1101" (4 chars), "192168" (6 chars), "255  0" (6 chars with spaces)
+3. Tries multiple split points for ambiguous lengths
+4. Validates each octet is 0-255
+5. Accepts alternative values like "DSABLD" for disabled networks
 
 ### 9. Complex Patterns with "May be"
 ```

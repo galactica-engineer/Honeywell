@@ -203,16 +203,60 @@ class TestResultProcessor:
                 # If we can't convert to numbers, can't compare
                 return None
         
-        # Handle "complex_range" type (for IP addresses, etc.)
+        # Handle "complex_range" type (for IP addresses, netmasks)
         if criteria['type'] == 'complex_range':
             # If there's an alternative value and the value matches it, pass
             if criteria.get('alternative'):
                 if value.upper().strip() == criteria['alternative'].upper():
                     return True
-            # For actual range validation, we'd need to parse the value
-            # For now, if it's not the alternative and not empty, pass
-            # (This is a simplification - proper validation would parse IP octets)
-            return True
+            
+            # Parse the value as two octets with variable width
+            # Format examples: "192168" (6 chars), "1101" (4 chars), "255  0" (6 chars with spaces)
+            # The octets are formatted as 3-character fields, but leading spaces may be stripped
+            value_clean = value.strip()
+            
+            # Values should be 4-6 characters
+            if len(value_clean) < 4 or len(value_clean) > 6:
+                return False
+            
+            try:
+                # If exactly 6 chars, split into two 3-char fields
+                if len(value_clean) == 6:
+                    octet1_str = value_clean[0:3].strip()
+                    octet2_str = value_clean[3:6].strip()
+                # If 4-5 chars, need to find the split point
+                # Format is typically: [1-3 digits][1-3 digits]
+                else:
+                    # Try to intelligently split - first octet is 1-3 digits from the start
+                    # Second octet is the rest
+                    # For "1101": split as "1" and "101" OR "11" and "01" OR "110" and "1"
+                    # We need to try different splits and see which makes sense
+                    found_valid = False
+                    for split_point in range(1, len(value_clean)):
+                        octet1_str = value_clean[:split_point]
+                        octet2_str = value_clean[split_point:]
+                        
+                        try:
+                            octet1 = int(octet1_str)
+                            octet2 = int(octet2_str)
+                            
+                            # Both must be in valid range
+                            if (0 <= octet1 <= 255) and (0 <= octet2 <= 255):
+                                found_valid = True
+                                break
+                        except ValueError:
+                            continue
+                    
+                    return found_valid
+                
+                # For 6-char values, validate the split octets
+                octet1 = int(octet1_str)
+                octet2 = int(octet2_str)
+                
+                # Both must be in range 0-255
+                return (0 <= octet1 <= 255) and (0 <= octet2 <= 255)
+            except (ValueError, IndexError):
+                return False
         
         # Handle "greater_than" type
         if criteria['type'] == 'greater_than':

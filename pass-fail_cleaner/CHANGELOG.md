@@ -68,16 +68,28 @@ Version 2 of the Test Result Cleaner addresses all the false failures identified
 
 ---
 
-### 5. Complex IP/Netmask Ranges Not Handled
-**Problem:** The "in range of X to Y and X to Y" pattern was being misinterpreted as a simple range
+### 5. Complex IP/Netmask Ranges Not Properly Validated
+**Problem:** The "in range of X to Y and X to Y" pattern was accepting any value without validation
 
 **Examples:**
-- MP 400: `S/B in range of 0 to 255 and 0 to 255` with value 192168 → Was incorrectly marked FAIL
-- MP 401: `S/B in range of 0 to 255 and 0 to 255` with value 1101 → Was incorrectly marked FAIL
-- MP 402: `S/B in range of 0 to 255 and 0 to 255` with value 255255 → Was incorrectly marked FAIL
-- MP 403: `S/B in range of 0 to 255 and 0 to 255` with value "255  0" → Was incorrectly marked FAIL
+- MP 400: `S/B in range of 0 to 255 and 0 to 255` with value 192168 → Was incorrectly marked FAIL (then incorrectly always PASS)
+- MP 401: `S/B in range of 0 to 255 and 0 to 255` with value 1101 → Was incorrectly marked FAIL (then incorrectly always PASS)
+- MP 402: `S/B in range of 0 to 255 and 0 to 255` with value 255255 → Was incorrectly marked FAIL (then incorrectly always PASS)
+- MP 403: `S/B in range of 0 to 255 and 0 to 255` with value "255  0" → Was incorrectly marked FAIL (then incorrectly always PASS)
 
-**Fix:** Added detection for "in range of" pattern that marks as complex range validation (simplified to always pass since proper validation would require parsing IP octets)
+**Fix:** Implemented proper dual-octet validation that:
+1. Parses values as two octets (e.g., "192168" = octets 192 and 168)
+2. Handles variable-width formats (4-6 characters)
+3. Validates each octet is in range 0-255
+4. Tries multiple split points for ambiguous values (e.g., "1101" could be "1,101" or "11,01" or "110,1")
+5. Accepts only splits where both octets are valid 0-255
+
+**Test cases:**
+- "192168" = 192, 168 → PASS ✓
+- "1101" = 1, 101 → PASS ✓  
+- "256100" = 256, 100 → FAIL (256 > 255) ✓
+- "100300" = 100, 300 → FAIL (300 > 255) ✓
+- "DSABLD" → PASS (alternative value) ✓
 
 ---
 

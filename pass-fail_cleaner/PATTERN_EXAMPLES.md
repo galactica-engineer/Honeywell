@@ -313,7 +313,16 @@ MP 400 S/B in range of 0 to 255 and 0 to 255
 MP 400 = 192168				PASS
 ```
 
-**Logic:** Complex range validation (simplified to always pass for valid-looking values) → **PASS**
+**Logic:** 
+- Value "192168" is parsed as two octets: 192 and 168
+- Octet 1: 192 (0 ≤ 192 ≤ 255) ✓
+- Octet 2: 168 (0 ≤ 168 ≤ 255) ✓
+- Both octets valid → **PASS**
+
+**Failure Example:**
+- Value "256100" would be: 256 and 100
+- Octet 1: 256 (256 > 255) ✗
+- Would be marked as **FAIL**
 
 ---
 
