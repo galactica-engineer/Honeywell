@@ -1,0 +1,148 @@
+# Test Result Cleaner
+
+This script processes test result files and resolves PASS/FAIL conditions based on specified criteria.
+
+## Overview
+
+The script identifies lines ending with `PASS/FAIL` and determines the actual result by comparing the measured value against the expected criteria (marked with "S/B" = Should Be).
+
+## Usage
+
+```bash
+python test_result_cleaner.py <input_file> [output_file]
+```
+
+### Arguments
+
+- `input_file` (required): Path to the test result file to process
+- `output_file` (optional): Path where the processed file should be saved
+  - If not specified, the script will create a file named `<input_file>_cleaned.txt`
+
+### Examples
+
+Process a file with automatic output naming:
+```bash
+python test_result_cleaner.py test_results.txt
+# Creates: test_results_cleaned.txt
+```
+
+Process a file with custom output name:
+```bash
+python test_result_cleaner.py input.txt output_cleaned.txt
+```
+
+## Supported Criteria Patterns
+
+The script recognizes and handles various types of test criteria:
+
+### 1. Exact Match
+```
+S/B VALUE
+```
+Example: `S/B NOWRAP` → Value must exactly match "NOWRAP"
+
+### 2. Tolerance Range
+```
+S/B TARGET +/- TOLERANCE
+```
+Example: `S/B 27535 +/- 5` → Value must be between 27530 and 27540
+
+### 3. Min-Max Range
+```
+S/B MIN to MAX
+```
+Example: `S/B 0 to 604799` → Value must be between 0 and 604799
+
+### 4. Set of Allowed Values
+```
+S/B VALUE1 or VALUE2 or VALUE3
+```
+Example: `S/B 0 or 1 or blank` → Value must be 0, 1, or empty
+
+### 5. Complex Patterns with "May be"
+```
+S/B X
+X May be RANGE, VALUE1, VALUE2 or VALUE3
+```
+Example:
+```
+S/B X
+X May be 1 - 9, A, B or C
+```
+This expands to: Value must be 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, or C
+
+## How It Works
+
+1. **Pattern Detection**: The script scans the file for lines ending with `PASS/FAIL`
+
+2. **Criteria Extraction**: For each PASS/FAIL line, it looks backwards (up to 10 lines) to find the criteria line starting with "S/B"
+
+3. **Multi-line Criteria**: If the criteria is just a placeholder (like "X" or "XX"), the script checks the next line for additional information (e.g., "X May be...")
+
+4. **Value Extraction**: Extracts the measured value from the test line (typically after an `=` sign)
+
+5. **Comparison**: Compares the measured value against the parsed criteria
+
+6. **Result**: Replaces `PASS/FAIL` with either `PASS` or `FAIL` based on the comparison
+
+## Output
+
+The script outputs a processed file that is identical to the input, except all `PASS/FAIL` instances are replaced with the determined result.
+
+### Statistics
+
+After processing, the script displays:
+- Total number of PASS/FAIL instances found
+- How many were resolved as PASS
+- How many were resolved as FAIL
+- How many were left unchanged (if criteria couldn't be determined)
+
+Example output:
+```
+Processing: test_results.txt
+Output to: test_results_cleaned.txt
+------------------------------------------------------------
+
+Processing complete!
+Total PASS/FAIL instances found: 90
+  - Resolved as PASS: 66
+  - Resolved as FAIL: 24
+  - Left unchanged: 0
+
+Output written to: test_results_cleaned.txt
+```
+
+## Technical Details
+
+### Value Comparison
+
+- **String values**: Case-insensitive comparison
+- **Numeric values**: Parsed as floats for tolerance and range comparisons
+- **Hex values**: Automatically detected and compared in hexadecimal
+- **Empty values**: Pass if "blank" is in the allowed set of values
+
+### Range Expansion
+
+When a range like "1 - 9" is specified in a "May be" pattern, the script:
+1. Detects the numeric range using regex
+2. Expands it to individual values: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+3. Combines with other allowed values in the same criterion
+
+### Error Handling
+
+- If the input file doesn't exist, an error is raised
+- If criteria cannot be determined, the PASS/FAIL is left unchanged
+- If a value cannot be extracted, the PASS/FAIL is left unchanged
+- All file encoding issues are handled gracefully
+
+## Limitations
+
+- The script looks backwards up to 10 lines for criteria
+- Criteria must be marked with "S/B" (case-insensitive)
+- Values are extracted from patterns containing `=`
+- Complex nested conditions are not supported
+
+## Requirements
+
+- Python 3.6 or higher
+- No external dependencies (uses only standard library)

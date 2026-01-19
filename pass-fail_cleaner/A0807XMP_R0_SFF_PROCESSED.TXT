@@ -1,0 +1,7953 @@
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|			Test Case: A0807XMP 		      |
+|			Program: GA SPS FQT  		      |
+|			OFP FQT      			      |
+|			START OF TEST			      |
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Requirements verified: SRS-0807  
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-------------------------------
+All message recording started
+	HSR file:
+..\HSRECORD\TEST_MESSAGE_RECORDS\..\HSRECORD\TEST_MESSAGE_RECORDS\A0807XMP_3_UDP_in.hsr
+..\HSRECORD\TEST_MESSAGE_RECORDS\A0807XMP_3_1553_in.hsr
+..\HSRECORD\TEST_MESSAGE_RECORDS\A0807XMP_3_UDP_out.hsr
+..\HSRECORD\TEST_MESSAGE_RECORDS\A0807XMP_3_1553_out.hsr
+..\HSRECORD\TEST_MESSAGE_RECORDS\A0807XMP_3_429_out.hsr
+..\HSRECORD\TEST_MESSAGE_RECORDS\A0807XMP_3_429_in.hsr
+-------------------------------
+
+-------------------------
+R,S,F,L REGISTERS CLEARED
+
+Subroutine REGCLR
+Time = 281932.52 Seconds
+-------------------------
+
+--------------------------------
+STD: Thu Jan 15 16:48:37 2026 
+GMT: Thu Jan 15 21:48:37 2026
+
+Subroutine PRTTIME
+--------------------------------
+
+-------------------------------------
+Hardware Lab Flag Enabled
+
+Hardware BOOT Disabled
+
+Software Lab Flag Enabled
+VEN1.01 = 8800
+EVEN1.01 = 8800
+
+Word Count
+VEN1.04 = 20
+EVEN1.04 = 20
+
+Input Message Control = MIL-STD-1553B
+Input Message Control Register R255 = 2
+I-25.01 = 100
+I-25.02 = 0
+I-25.03 = 0
+I-25.04 = 0
+I-25.05 = 0
+I-25.06 = 0
+I-25.07 = 0
+I-25.08 = 0
+I-25.09 = 0
+I-25.10 = 0
+I-25.11 = 0
+I-25.12 = 0
+I-25.13 = 0
+I-25.14 = 0
+I-25.15 = 0
+I-25.16 = 0
+
+Hardware Configuration - SFF, Register R254 = 2
+
+C01.01 (Mode Word) = 8000
+EC01.01 (Mode Word) = 8000
+
+C01.02 (Pressure Altitude) = 80.00 Feet
+EC01.02 (Pressure Altitude) = 80.00 Feet
+
+C01.04 (True Airspeed) = 0.00 Knots
+EC01.04 (True Airspeed) = 0.00 Knots
+
+I-1.02 BITS 08-15 (Datum) = 47
+EI-1.02 BITS 08-15 (Datum)= 47
+
+I-1.02 BITS 02/03 (Phase Of Flight) =  0
+EI-1.02 BITS 02/03 (Phase Of Flight) =  0
+
+I-1.07 BIT's 13/14 (Approach Subtype) =  0
+EI-1.07 BIT's 13/14 (Approach Subtype) =  0
+
+I-1.06 BITS 07-15 (Mask Angle) = 5.0 Deg
+EI-1.06 BITS 07-15 (Mask Angle) = 5.0 Deg
+
+I-1.03 BITS 11-13 (SBAS Aug Type) = 0 
+EI-1.03 BITS 11-13 (SBAS Aug Type) = 0 
+
+I-1.05 BIT 7 (SBAS Data) = 0 
+EI-1.05 BIT 7 (SBAS Data) = 0 
+
+I-1.01 BITS 01/02 (RECEIVER MODE SELECT) = 2 
+EI-1.01 BITS 01/02 (RECEIVER MODE SELECT) = 2 
+
+I-2.01 (Init Word) = f800
+EI-2.01 (Init Word) = f800
+
+I-2.07/08 (Entered Latitude) = 27.89170 Deg
+EI-2.07/08 (Entered Latitude) = 27.89170 Deg
+
+I-2.09/10 (Entered Longitude) = -82.72570 Deg
+EI-2.09/10 (Entered Longitude) = -82.72570 Deg
+
+I-2.11 (Entered Altitude) = 80.00 Feet
+EI-2.11 (Entered Altitude) = 80.00 Feet
+
+I-2.02 (Entered Year) = 2026
+I-2.03 (Entered Month) =  1
+I-2.04 (Entered Day) =  15
+
+D01.01 = 1f
+D01.02 = 0
+D01.03 = 0
+D01.04 = 0
+ED01.01 = 1f
+ED01.02 = 0
+ED01.03 = 0
+ED01.04 = 0
+
+Subroutine NORMSETUP
+Time = 281951.80 Seconds
+-------------------------------------
+
+##############################################
+EGI-M HW/SW/FW CONFIGURATION CHECK
+ -------------------------
+PWRUP Subroutine Started
+-------------------------
+-------------------------
+PRIMARY POWER APPLIED
+
+Standby reported in 0.009 seconds
+
+Subroutine PWRUP
+Time = 281975.50 Seconds
+-------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.20 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.94 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 281977.15 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.75 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.68 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 281979.06 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.77 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.87 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 281981.20 Seconds
+-------------------------------------------------
+
+------------------------------------------------
+LAB FLAG Discrete Set via MP520
+
+Subroutine MP520
+Time = 281982.37 Seconds
+------------------------------------------------
+
+-----------------------------------
+MIL-STD-1553 INTERFACE TRANSMITTING
+-----------------------------------
+
+---------- 1553 Controlling Interface ---------
+
+===================================
+Initialize Ethernet Interface
+
+-----------------------------------------------------
+ETHERNET INTERFACE TRANSMITTING AFTER 1 ATTEMPTS
+-----------------------------------------------------
+
+EI33.01 = 0.000000
+EI33.02 = 192.000000
+EI33.03 = 168.000000
+EI33.04 = 1.000000
+EI33.05 = 10.000000
+EI33.06 = 2001.000000
+EI33.07 = 1
+EI33.08 = 1
+EI33.09 = 1
+EI33.10 = 1
+EI33.11 = 1
+EI33.12 = 1
+EI33.13 = 1
+EI33.14 = 1
+EI33.15 = 1
+EI33.16 = 1
+EI33.17 = 1
+EI33.18 = 1
+EI33.21 = 1
+EI33.22 = 1
+EI33.23 = 1
+EI33.25 = 1
+EI33.26 = 1
+EI33.27 = 1
+EI33.29 = 1
+EI33.30 = 1
+EI33.31 = 1
+EI33.32 = 1
+EI33.34 = 1
+EI33.35 = 1
+EI33.36 = 1
+EI33.37 = 1
+EI33.38 = 1
+EI33.39 = 1
+EI33.40 = 1
+EI33.41 = 1
+EI33.42 = 1
+EI33.43 = 1
+EI33.44 = 1
+EI33.45 = 1
+EI33.46 = 1
+EI33.47 = 1
+EI33.48 = 1
+EI33.49 = 1
+EI33.50 = 1
+EI33.51 = 1
+EI33.52 = 1
+EI33.53 = 1
+Subroutine ENABLE_ALL
+Time = 281997.51 Seconds
+-------------------------------------
+
+-------------------------
+CAL2 messages being received 1.027 seconds after enable_all
+LAB FLAG ENABLED
+-------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 282012.03 Seconds
+-------------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 282019.67 Seconds
+-------------------------------------
+
+------------------------------------
+GC Align Mode Commanded
+
+D01 FUNCTION SELECT CODE =  2
+ED01 FUNCTION SELECT CODE =  2
+
+Subroutine MODEGCAL
+Time = 282022.99 Seconds
+------------------------------------
+
+-------------------------------------
+GC Align Mode Entered
+
+Time In Loop = 0.27 Seconds
+
+I01P.29 BIT 04 S/B 800 
+I01P.29 BIT 04 = 800 				PASS
+
+I01B.29 BIT 04 S/B 800 
+I01B.29 BIT 04 = 800 				PASS
+
+EI01P.29 BIT 04 S/B 800 
+EI01P.29 BIT 04 = 800 				PASS
+
+EI01B.29 BIT 04 S/B 800 
+EI01B.29 BIT 04 = 800 				PASS
+
+Subroutine WAITGCAL
+Time = 282024.87 Seconds
+-------------------------------------
+
+=======================================================
+MP 7 (EGI ACE OFP ID Number)           : 386209
+MP 177 (EGI Production S/N)            :  00629
+MP 178 (EGI Configuration Number)      :   BB2A
+MP 274 (EGI Software Configuration)    : GAFS03
+MP 277 (GPS Software Version)          :   _29B
+MP 278 (GPS Software Checksum)         :   001D
+MP 279/280 (EGI OFP CRC)               :   6097  F7B7
+MP 281/282 (MOP Software CRC)          :   10EC  9EFB
+MP 290/291 (BIC Software CRC)          :   FEE1  AF2F
+MP 303/304 (OFP CONFIG TABLE CRC)      :   01F1  8228
+MP 309/310 (ARINC CONFIG TABLE CRC)    :     NA    NA
+MP 333/334 (Factory UCT CRC)           :     NA    NA
+MP 337/338 (Field UCT CRC)             :     NA    NA
+MP 341/342 (GPS UCT CRC)	            :     NA    NA
+========================================================
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 282188.35 Seconds
+-------------------------------------
+
+-----------------------------
+PRIMARY POWER REMOVED
+
+Power Off Time =  1.48 sec
+
+Subroutine PWRDOWN
+Time = 282191.20 Seconds
+-----------------------------
+
+-------------------------
+PWRUP Subroutine Started
+-------------------------
+-------------------------
+PRIMARY POWER APPLIED
+
+Standby reported in 0.009 seconds
+
+Subroutine PWRUP
+Time = 282233.91 Seconds
+-------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.98 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.98 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282236.45 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.43 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.91 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282238.27 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.78 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.93 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282240.43 Seconds
+-------------------------------------------------
+
+------------------------------------------------
+LAB FLAG Discrete Set via MP520
+
+Subroutine MP520
+Time = 282241.60 Seconds
+------------------------------------------------
+
+-----------------------------------
+MIL-STD-1553 INTERFACE TRANSMITTING
+-----------------------------------
+
+---------- 1553 Controlling Interface ---------
+
+===================================
+Initialize Ethernet Interface
+
+-----------------------------------------------------
+ETHERNET INTERFACE TRANSMITTING AFTER 1 ATTEMPTS
+-----------------------------------------------------
+
+EI33.01 = 0.000000
+EI33.02 = 192.000000
+EI33.03 = 168.000000
+EI33.04 = 1.000000
+EI33.05 = 10.000000
+EI33.06 = 2001.000000
+EI33.07 = 1
+EI33.08 = 1
+EI33.09 = 1
+EI33.10 = 1
+EI33.11 = 1
+EI33.12 = 1
+EI33.13 = 1
+EI33.14 = 1
+EI33.15 = 1
+EI33.16 = 1
+EI33.17 = 1
+EI33.18 = 1
+EI33.21 = 1
+EI33.22 = 1
+EI33.23 = 1
+EI33.25 = 1
+EI33.26 = 1
+EI33.27 = 1
+EI33.29 = 1
+EI33.30 = 1
+EI33.31 = 1
+EI33.32 = 1
+EI33.34 = 1
+EI33.35 = 1
+EI33.36 = 1
+EI33.37 = 1
+EI33.38 = 1
+EI33.39 = 1
+EI33.40 = 1
+EI33.41 = 1
+EI33.42 = 1
+EI33.43 = 1
+EI33.44 = 1
+EI33.45 = 1
+EI33.46 = 1
+EI33.47 = 1
+EI33.48 = 1
+EI33.49 = 1
+EI33.50 = 1
+EI33.51 = 1
+EI33.52 = 1
+EI33.53 = 1
+Subroutine ENABLE_ALL
+Time = 282256.75 Seconds
+-------------------------------------
+
+-------------------------
+CAL2 messages being received 1.030 seconds after enable_all
+LAB FLAG ENABLED
+-------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 282271.33 Seconds
+-------------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 282278.88 Seconds
+-------------------------------------
+
+-------------------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 282280.91 Seconds
+-------------------------------------
+
+---------------------------------
+EGR Initialization Mode Commanded
+
+I-1.01 = a704
+EI-1.01 = a704
+
+Subroutine GPMINIT
+Time = 282292.27 Seconds
+---------------------------------
+
+-------------------------------------
+EGR Actual Mode = INIT
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT's 01/02 S/B 1 
+G-1.02 BIT's 01/02 = 1 				PASS
+
+EG-1.02 BIT's 01/02 S/B 1 
+EG-1.02 BIT's 01/02 = 1 				PASS
+
+G-9.01 BIT's 01/02 S/B 1 
+G-9.01 BIT's 01/02 = 1 				PASS
+
+EG-9.01 BIT's 01/02 S/B 1 
+EG-9.01 BIT's 01/02 = 1 				PASS
+
+Subroutine GPINWAIT
+Time = 282294.30 Seconds
+-------------------------------------
+
+I-2 GPS INIT WORD = 0X0020 
+
+I-2 L1 and L2 GAIN UNCERTAINTIES = 255 
+
+I-2 INJECTED 
+
+Waiting for EGR calibration to complete.
+
+EGR auto-calibration complete, G-2.24 (gain uncertainty) = 254.
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 282311.34 Seconds
+-------------------------------------
+
+-------------------------------
+EGR Navigate Mode Commanded
+
+I-1.01 = c704
+EI-1.01 = c704
+
+Subroutine GPMNAV
+Time = 282313.62 Seconds
+-------------------------------
+
+-------------------------------------
+EGR Actual Mode = NAV
+
+Time In Loop = 1.26 Seconds
+
+G-1.02 BIT's 01/02 S/B 2 
+G-1.02 BIT's 01/02 = 2 				PASS
+
+EG-1.02 BIT's 01/02 S/B 2 
+EG-1.02 BIT's 01/02 = 2 				PASS
+
+G-9.01 BIT's 01/02 S/B 2 
+G-9.01 BIT's 01/02 = 2 				PASS
+
+EG-9.01 BIT's 01/02 S/B 2 
+EG-9.01 BIT's 01/02 = 2 				PASS
+
+Subroutine GPNAWAIT
+Time = 282316.46 Seconds
+-------------------------------------
+
+Subroutine GPSCAL
+Time = 282316.65 Seconds
+-------------------------------------
+
+-------------------------------------
+EGR Actual Mode = NAV
+
+Time In Loop = 0.28 Seconds
+
+G-1.02 BIT's 01/02 S/B 2 
+G-1.02 BIT's 01/02 = 2 				PASS
+
+EG-1.02 BIT's 01/02 S/B 2 
+EG-1.02 BIT's 01/02 = 2 				PASS
+
+G-9.01 BIT's 01/02 S/B 2 
+G-9.01 BIT's 01/02 = 2 				PASS
+
+EG-9.01 BIT's 01/02 S/B 2 
+EG-9.01 BIT's 01/02 = 2 				PASS
+
+Subroutine GPNAWAIT
+Time = 282318.60 Seconds
+-------------------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 282320.50 Seconds
+-------------------------------------
+
+---------------------------------
+EGR Initialization Mode Commanded
+
+I-1.01 = a704
+EI-1.01 = a704
+
+Subroutine GPMINIT
+Time = 282331.84 Seconds
+---------------------------------
+
+-------------------------------------
+EGR Actual Mode = INIT
+
+Time In Loop = 0.29 Seconds
+
+G-1.02 BIT's 01/02 S/B 1 
+G-1.02 BIT's 01/02 = 1 				PASS
+
+EG-1.02 BIT's 01/02 S/B 1 
+EG-1.02 BIT's 01/02 = 1 				PASS
+
+G-9.01 BIT's 01/02 S/B 1 
+G-9.01 BIT's 01/02 = 1 				PASS
+
+EG-9.01 BIT's 01/02 S/B 1 
+EG-9.01 BIT's 01/02 = 1 				PASS
+
+Subroutine GPINWAIT
+Time = 282333.67 Seconds
+-------------------------------------
+
+Calibrated RF1 L1 Gains Injected
+
+Verifying Entered Calibrated Gains
+Time In Loop = 0.17 Seconds
+
+Verifying I-2 Entered Calibrated Gains
+---------------------------------
+RF1 L1 Gain S/B 10
+RF1 L1 Gain = 10 				PASS
+
+---------------------------------
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 282343.27 Seconds
+-------------------------------------
+
+-------------------------------
+EGR Navigate Mode Commanded
+
+I-1.01 = c704
+EI-1.01 = c704
+
+Subroutine GPMNAV
+Time = 282345.59 Seconds
+-------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 282361.91 Seconds
+-------------------------------------
+
+-----------------------------
+PRIMARY POWER REMOVED
+
+Power Off Time =  1.39 sec
+
+Subroutine PWRDOWN
+Time = 282364.67 Seconds
+-----------------------------
+
+***********************************************
+Req SRS-0807:
+The OFP shall input and output all MIL-STD-1553B MUX 
+data bus messages as specified in the ICD.
+
+***********************************************
+
+========================= Test Case #1 ======================= 
+This test case verifies the MP's associated with BIT
+
+*************************************
+ Test steps:
+ Erase any previous BIT's from history.
+ Power on EGI
+ Command GC Align.
+ Verify GC Align mode.
+ Send present position.
+ Verify MP's 135-158, 180-182.
+ Insert a fault.
+ Verify MP's 143, 155, 180-182.
+ Power down the UUT and check for LBITS.
+ Power up the UUT.
+ Command GC Align.
+ Verify GC Align mode.
+ Send present position.
+ Verify MP's 143, 155.
+ Clear history bit.
+ Power down the UUT.
+ Command GC Align.
+ Power up the UUT.
+ Verify GC Align mode.
+ Send present position.
+ Verify MP's 143, 155.
+ Power off EGI
+*************************************
+
+-------------------------
+PWRUP Subroutine Started
+-------------------------
+-------------------------
+PRIMARY POWER APPLIED
+
+Standby reported in 0.009 seconds
+
+Subroutine PWRUP
+Time = 282407.54 Seconds
+-------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.49 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.92 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282409.46 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.48 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.97 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282411.35 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.68 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.92 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282413.46 Seconds
+-------------------------------------------------
+
+------------------------------------------------
+LAB FLAG Discrete Set via MP520
+
+Subroutine MP520
+Time = 282414.67 Seconds
+------------------------------------------------
+
+-----------------------------------
+MIL-STD-1553 INTERFACE TRANSMITTING
+-----------------------------------
+
+---------- 1553 Controlling Interface ---------
+
+===================================
+Initialize Ethernet Interface
+
+-----------------------------------------------------
+ETHERNET INTERFACE TRANSMITTING AFTER 1 ATTEMPTS
+-----------------------------------------------------
+
+EI33.01 = 0.000000
+EI33.02 = 192.000000
+EI33.03 = 168.000000
+EI33.04 = 1.000000
+EI33.05 = 10.000000
+EI33.06 = 2001.000000
+EI33.07 = 1
+EI33.08 = 1
+EI33.09 = 1
+EI33.10 = 1
+EI33.11 = 1
+EI33.12 = 1
+EI33.13 = 1
+EI33.14 = 1
+EI33.15 = 1
+EI33.16 = 1
+EI33.17 = 1
+EI33.18 = 1
+EI33.21 = 1
+EI33.22 = 1
+EI33.23 = 1
+EI33.25 = 1
+EI33.26 = 1
+EI33.27 = 1
+EI33.29 = 1
+EI33.30 = 1
+EI33.31 = 1
+EI33.32 = 1
+EI33.34 = 1
+EI33.35 = 1
+EI33.36 = 1
+EI33.37 = 1
+EI33.38 = 1
+EI33.39 = 1
+EI33.40 = 1
+EI33.41 = 1
+EI33.42 = 1
+EI33.43 = 1
+EI33.44 = 1
+EI33.45 = 1
+EI33.46 = 1
+EI33.47 = 1
+EI33.48 = 1
+EI33.49 = 1
+EI33.50 = 1
+EI33.51 = 1
+EI33.52 = 1
+EI33.53 = 1
+Subroutine ENABLE_ALL
+Time = 282429.87 Seconds
+-------------------------------------
+
+-------------------------
+CAL2 messages being received 1.037 seconds after enable_all
+LAB FLAG ENABLED
+-------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 282444.50 Seconds
+-------------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 282452.00 Seconds
+-------------------------------------
+
+------------------------------------
+GC Align Mode Commanded
+
+D01 FUNCTION SELECT CODE =  2
+ED01 FUNCTION SELECT CODE =  2
+
+Subroutine MODEGCAL
+Time = 282455.37 Seconds
+------------------------------------
+
+-------------------------------------
+GC Align Mode Entered
+
+Time In Loop = 0.27 Seconds
+
+I01P.29 BIT 04 S/B 800 
+I01P.29 BIT 04 = 800 				PASS
+
+I01B.29 BIT 04 S/B 800 
+I01B.29 BIT 04 = 800 				PASS
+
+EI01P.29 BIT 04 S/B 800 
+EI01P.29 BIT 04 = 800 				PASS
+
+EI01B.29 BIT 04 S/B 800 
+EI01B.29 BIT 04 = 800 				PASS
+
+Subroutine WAITGCAL
+Time = 282457.20 Seconds
+-------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 189 
+Reading ED01.03 MP 189 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.65 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.92 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282459.53 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282461.82 Seconds
+-------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER WRITE 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.14 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.81 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282466.44 Seconds
+-------------------------------------------------
+
+Subroutine MPWRITE
+Time = 282468.66 Seconds
+-------------------------------------
+
+=============================
+MP 189 Mission Data Zeroized 
+=============================
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 191 
+Reading ED01.03 MP 191 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.30 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.90 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282470.54 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282472.77 Seconds
+-------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER WRITE 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.05 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.90 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282477.39 Seconds
+-------------------------------------------------
+
+Subroutine MPWRITE
+Time = 282479.62 Seconds
+-------------------------------------
+
+=================================
+MP 191 History Latch Bits Cleared
+=================================
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 294 
+Reading ED01.03 MP 294 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.28 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.82 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282482.45 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282484.69 Seconds
+-------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER WRITE 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.06 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.91 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282489.49 Seconds
+-------------------------------------------------
+
+Subroutine MPWRITE
+Time = 282491.76 Seconds
+-------------------------------------
+
+==========================
+MP 294 Flight Data Cleared
+==========================
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 282498.09 Seconds
+-------------------------------------
+
+-----------------------------
+PRIMARY POWER REMOVED
+
+Power Off Time =  1.35 sec
+
+Subroutine PWRDOWN
+Time = 282500.81 Seconds
+-----------------------------
+
+-------------------------
+PWRUP Subroutine Started
+-------------------------
+-------------------------
+PRIMARY POWER APPLIED
+
+Standby reported in 0.009 seconds
+
+Subroutine PWRUP
+Time = 282543.38 Seconds
+-------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.64 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.90 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282545.53 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.70 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.66 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282547.43 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.71 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282549.55 Seconds
+-------------------------------------------------
+
+------------------------------------------------
+LAB FLAG Discrete Set via MP520
+
+Subroutine MP520
+Time = 282550.72 Seconds
+------------------------------------------------
+
+-----------------------------------
+MIL-STD-1553 INTERFACE TRANSMITTING
+-----------------------------------
+
+---------- 1553 Controlling Interface ---------
+
+===================================
+Initialize Ethernet Interface
+
+-----------------------------------------------------
+ETHERNET INTERFACE TRANSMITTING AFTER 1 ATTEMPTS
+-----------------------------------------------------
+
+EI33.01 = 0.000000
+EI33.02 = 192.000000
+EI33.03 = 168.000000
+EI33.04 = 1.000000
+EI33.05 = 10.000000
+EI33.06 = 2001.000000
+EI33.07 = 1
+EI33.08 = 1
+EI33.09 = 1
+EI33.10 = 1
+EI33.11 = 1
+EI33.12 = 1
+EI33.13 = 1
+EI33.14 = 1
+EI33.15 = 1
+EI33.16 = 1
+EI33.17 = 1
+EI33.18 = 1
+EI33.21 = 1
+EI33.22 = 1
+EI33.23 = 1
+EI33.25 = 1
+EI33.26 = 1
+EI33.27 = 1
+EI33.29 = 1
+EI33.30 = 1
+EI33.31 = 1
+EI33.32 = 1
+EI33.34 = 1
+EI33.35 = 1
+EI33.36 = 1
+EI33.37 = 1
+EI33.38 = 1
+EI33.39 = 1
+EI33.40 = 1
+EI33.41 = 1
+EI33.42 = 1
+EI33.43 = 1
+EI33.44 = 1
+EI33.45 = 1
+EI33.46 = 1
+EI33.47 = 1
+EI33.48 = 1
+EI33.49 = 1
+EI33.50 = 1
+EI33.51 = 1
+EI33.52 = 1
+EI33.53 = 1
+Subroutine ENABLE_ALL
+Time = 282565.85 Seconds
+-------------------------------------
+
+-------------------------
+CAL2 messages being received 1.027 seconds after enable_all
+LAB FLAG ENABLED
+-------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 282580.58 Seconds
+-------------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 282587.93 Seconds
+-------------------------------------
+
+------------------------------------
+GC Align Mode Commanded
+
+D01 FUNCTION SELECT CODE =  2
+ED01 FUNCTION SELECT CODE =  2
+
+Subroutine MODEGCAL
+Time = 282591.23 Seconds
+------------------------------------
+
+-------------------------------------
+GC Align Mode Entered
+
+Time In Loop = 0.27 Seconds
+
+I01P.29 BIT 04 S/B 800 
+I01P.29 BIT 04 = 800 				PASS
+
+I01B.29 BIT 04 S/B 800 
+I01B.29 BIT 04 = 800 				PASS
+
+EI01P.29 BIT 04 S/B 800 
+EI01P.29 BIT 04 = 800 				PASS
+
+EI01B.29 BIT 04 S/B 800 
+EI01B.29 BIT 04 = 800 				PASS
+
+Subroutine WAITGCAL
+Time = 282593.04 Seconds
+-------------------------------------
+
+----------------------------------
+HONEYWELL-CLEARWATER POSITION SET
+
+D01.03/04 (Latitude) = 13d5 876f 
+D01.05/08 (Longitude) = c52c 3ef3 
+
+ED01.03/04 (Latitude) = 13d5 876f 
+ED01.05/08 (Longitude) = c52c 3ef3 
+
+Subroutine PPOSLAB
+Time = 282594.51 Seconds
+----------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.71 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.61 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282597.39 Seconds
+-------------------------------------------------
+
+----------------------------
+Present Position Entered 
+
+D01.02 = 0
+ED01.02 = 0
+
+Subroutine PPOSENT
+Time = 282597.66 Seconds
+----------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 135 
+Reading ED01.03 MP 135 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.39 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.70 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282601.41 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282603.64 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 135 (CURRENT MISSION BIT WORD 1)===== 
+MP 135 S/B     0000
+MP 135 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 136 
+Reading ED01.03 MP 136 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.09 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.86 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282610.46 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282612.72 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 136 (CURRENT MISSION BIT WORD 2)===== 
+MP 136 S/B     0000
+MP 136 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 137 
+Reading ED01.03 MP 137 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.08 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.91 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282619.58 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282621.81 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 137 (CURRENT MISSION BIT WORD 3)===== 
+MP 137 S/B     0000
+MP 137 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 138 
+Reading ED01.03 MP 138 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.98 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.51 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282628.40 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282630.68 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 138 (CURRENT MISSION BIT WORD 4)===== 
+MP 138 S/B     0000
+MP 138 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 139 
+Reading ED01.03 MP 139 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.16 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.93 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282637.52 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282639.80 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 139 (CURRENT MISSION BIT WORD 5)===== 
+MP 139 S/B     0000
+MP 139 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 140 
+Reading ED01.03 MP 140 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.03 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 1.00 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282646.59 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282648.86 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 140 (CURRENT MISSION BIT WORD 6)===== 
+MP 140 S/B     0000
+MP 140 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 141 
+Reading ED01.03 MP 141 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.02 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.68 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282655.35 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282657.57 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 141 (CURRENT MISSION BIT WORD 7)===== 
+MP 141 S/B     0000
+MP 141 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 142 
+Reading ED01.03 MP 142 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.36 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.69 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282663.49 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282665.72 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 142 (CURRENT MISSION BIT WORD 8)===== 
+MP 142 S/B     0000
+MP 142 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 143 
+Reading ED01.03 MP 143 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.99 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282672.54 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282674.77 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 143 (CURRENT MISSION BIT WORD 9)===== 
+MP 143 S/B     0000
+MP 143 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 144 
+Reading ED01.03 MP 144 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.92 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.77 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282681.49 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282683.77 Seconds
+-------------------------------------
+
+-----------------------------------------------
+=====MP 144 (CURRENT MISSION BIT WORD 10)===== 
+MP 144 S/B     0000
+MP 144 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 145 
+Reading ED01.03 MP 145 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.03 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.59 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282690.35 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282692.59 Seconds
+-------------------------------------
+
+-----------------------------------------------
+=====MP 145 (CURRENT MISSION BIT WORD 11)===== 
+MP 145 S/B     0000
+MP 145 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 146 
+Reading ED01.03 MP 146 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.26 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282698.60 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282700.83 Seconds
+-------------------------------------
+
+-----------------------------------------------
+=====MP 146 (CURRENT MISSION BIT WORD 12)===== 
+MP 146 S/B LESS THAN 0002
+MP 146 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 147 
+Reading ED01.03 MP 147 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.80 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282707.54 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282709.77 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 147 (HISTORY MISSION BIT WORD 1)===== 
+MP 147 S/B     0000
+MP 147 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 148 
+Reading ED01.03 MP 148 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.04 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282716.59 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282718.82 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 148 (HISTORY MISSION BIT WORD 2)===== 
+MP 148 S/B     0000
+MP 148 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 149 
+Reading ED01.03 MP 149 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.08 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.91 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282725.64 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282727.91 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 149 (HISTORY MISSION BIT WORD 3)===== 
+MP 149 S/B     0000
+MP 149 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 150 
+Reading ED01.03 MP 150 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.05 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.70 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282734.43 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282736.66 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 150 (HISTORY MISSION BIT WORD 4)===== 
+MP 150 S/B     0000
+MP 150 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 151 
+Reading ED01.03 MP 151 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.99 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.81 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282743.48 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282745.73 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 151 (HISTORY MISSION BIT WORD 5)===== 
+MP 151 S/B     0000
+MP 151 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 152 
+Reading ED01.03 MP 152 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.98 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.82 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282752.60 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282754.83 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 152 (HISTORY MISSION BIT WORD 6)===== 
+MP 152 S/B     0000
+MP 152 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 153 
+Reading ED01.03 MP 153 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.11 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.71 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282761.42 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282763.70 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 153 (HISTORY MISSION BIT WORD 7)===== 
+MP 153 S/B     0000
+MP 153 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 154 
+Reading ED01.03 MP 154 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.05 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.90 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282770.46 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282772.74 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 154 (HISTORY MISSION BIT WORD 8)===== 
+MP 154 S/B     0000
+MP 154 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 155 
+Reading ED01.03 MP 155 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.13 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282779.58 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282781.86 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 155 (HISTORY MISSION BIT WORD 9)===== 
+MP 155 S/B     0000
+MP 155 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 156 
+Reading ED01.03 MP 156 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.04 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.91 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282788.66 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282790.94 Seconds
+-------------------------------------
+
+-----------------------------------------------
+=====MP 156 (HISTORY MISSION BIT WORD 10)===== 
+MP 156 S/B     0000
+MP 156 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 157 
+Reading ED01.03 MP 157 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.06 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.62 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282797.49 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282799.72 Seconds
+-------------------------------------
+
+-----------------------------------------------
+=====MP 157 (HISTORY MISSION BIT WORD 11)===== 
+MP 157 S/B     0000
+MP 157 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 158 
+Reading ED01.03 MP 158 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.10 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.79 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282806.85 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282809.09 Seconds
+-------------------------------------
+
+-----------------------------------------------
+=====MP 158 (HISTORY MISSION BIT WORD 12)===== 
+MP 158 S/B     0000
+MP 158 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 180 
+Reading ED01.03 MP 180 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.66 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282815.64 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282817.87 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 180 (Current Mission BIT SRU #1)===== 
+MP 180 S/B     0000
+MP 180 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 181 
+Reading ED01.03 MP 181 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.01 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.55 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282824.43 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282826.66 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 181 (Current Mission BIT SRU #2)===== 
+MP 181 S/B     0000
+MP 181 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 182 
+Reading ED01.03 MP 182 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.35 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.69 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282832.50 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282834.78 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 182 (Current Mission BIT SRU #3)===== 
+MP 182 S/B     0000
+MP 182 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+-------------------------------------
+MEMORY ADDRESS ADJUSTED
+
+VEN1.02 offset by 36c hex
+VEN1.02 = 42825e4 
+
+Subroutine ADJSTADR
+Time = 282854.71 Seconds
+-------------------------------------
+
+Periodic Background Calibration Data
+Checksum Fault Inserted
+
+Subroutine FAULT
+Time = 282870.96 Seconds
+-------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 142 
+Reading ED01.03 MP 142 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.09 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.78 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282873.56 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282875.80 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 142 (CURRENT MISSION BIT WORD 8)===== 
+MP 142 S/B     0010
+MP 142 =   0010				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 154 
+Reading ED01.03 MP 154 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.99 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.71 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282882.49 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282884.77 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 154 (HISTORY MISSION BIT WORD 8)===== 
+MP 154 S/B     0000
+MP 154 =   0000				PASS
+
+---------------------------------
+
+-------------------------
+SRU FAILURE INDICATOR
+
+I14.04 S/B 8000
+I14.04 = 8000				PASS
+
+EI14.04 S/B 8000
+EI14.04 = 8000				PASS
+
+-------------------------
+ -------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 180 
+Reading ED01.03 MP 180 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.31 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.81 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282891.49 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282893.83 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 180 (Current Mission BIT SRU #1)===== 
+MP 180 S/B     0100
+MP 180 =   0100				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 181 
+Reading ED01.03 MP 181 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.00 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.90 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282900.61 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282902.86 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 181 (Current Mission BIT SRU #2)===== 
+MP 181 S/B     0400
+MP 181 =   0400				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 182 
+Reading ED01.03 MP 182 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.98 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282909.64 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 282911.87 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 182 (Current Mission BIT SRU #3)===== 
+MP 182 S/B     0004
+MP 182 =   0004				PASS
+
+---------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 10
+EI14.16 = 10
+LBIT ID 124: PERIODIC BACKGROUND CAL DATA CHECKSUM
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 282922.60 Seconds
+-------------------------------------
+
+-----------------------------
+PRIMARY POWER REMOVED
+
+Power Off Time =  1.45 sec
+
+Subroutine PWRDOWN
+Time = 282925.45 Seconds
+-----------------------------
+
+-----------------------------------------------------------
+PERIODIC BACKGROUND CALIBRATION DATA CHECKSUM LBIT EXPECTED
+-----------------------------------------------------------
+
+-------------------------
+PWRUP Subroutine Started
+-------------------------
+-------------------------
+PRIMARY POWER APPLIED
+
+Standby reported in 0.009 seconds
+
+Subroutine PWRUP
+Time = 282967.95 Seconds
+-------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.25 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.68 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282970.51 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.67 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 1.01 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282972.62 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.67 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.77 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 282974.51 Seconds
+-------------------------------------------------
+
+------------------------------------------------
+LAB FLAG Discrete Set via MP520
+
+Subroutine MP520
+Time = 282975.73 Seconds
+------------------------------------------------
+
+-----------------------------------
+MIL-STD-1553 INTERFACE TRANSMITTING
+-----------------------------------
+
+---------- 1553 Controlling Interface ---------
+
+===================================
+Initialize Ethernet Interface
+
+-----------------------------------------------------
+ETHERNET INTERFACE TRANSMITTING AFTER 1 ATTEMPTS
+-----------------------------------------------------
+
+EI33.01 = 0.000000
+EI33.02 = 192.000000
+EI33.03 = 168.000000
+EI33.04 = 1.000000
+EI33.05 = 10.000000
+EI33.06 = 2001.000000
+EI33.07 = 1
+EI33.08 = 1
+EI33.09 = 1
+EI33.10 = 1
+EI33.11 = 1
+EI33.12 = 1
+EI33.13 = 1
+EI33.14 = 1
+EI33.15 = 1
+EI33.16 = 1
+EI33.17 = 1
+EI33.18 = 1
+EI33.21 = 1
+EI33.22 = 1
+EI33.23 = 1
+EI33.25 = 1
+EI33.26 = 1
+EI33.27 = 1
+EI33.29 = 1
+EI33.30 = 1
+EI33.31 = 1
+EI33.32 = 1
+EI33.34 = 1
+EI33.35 = 1
+EI33.36 = 1
+EI33.37 = 1
+EI33.38 = 1
+EI33.39 = 1
+EI33.40 = 1
+EI33.41 = 1
+EI33.42 = 1
+EI33.43 = 1
+EI33.44 = 1
+EI33.45 = 1
+EI33.46 = 1
+EI33.47 = 1
+EI33.48 = 1
+EI33.49 = 1
+EI33.50 = 1
+EI33.51 = 1
+EI33.52 = 1
+EI33.53 = 1
+Subroutine ENABLE_ALL
+Time = 282991.04 Seconds
+-------------------------------------
+
+-------------------------
+CAL2 messages being received 1.027 seconds after enable_all
+LAB FLAG ENABLED
+-------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 283005.58 Seconds
+-------------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 283013.15 Seconds
+-------------------------------------
+
+------------------------------------
+GC Align Mode Commanded
+
+D01 FUNCTION SELECT CODE =  2
+ED01 FUNCTION SELECT CODE =  2
+
+Subroutine MODEGCAL
+Time = 283016.48 Seconds
+------------------------------------
+
+-------------------------------------
+GC Align Mode Entered
+
+Time In Loop = 0.27 Seconds
+
+I01P.29 BIT 04 S/B 800 
+I01P.29 BIT 04 = 800 				PASS
+
+I01B.29 BIT 04 S/B 800 
+I01B.29 BIT 04 = 800 				PASS
+
+EI01P.29 BIT 04 S/B 800 
+EI01P.29 BIT 04 = 800 				PASS
+
+EI01B.29 BIT 04 S/B 800 
+EI01B.29 BIT 04 = 800 				PASS
+
+Subroutine WAITGCAL
+Time = 283018.32 Seconds
+-------------------------------------
+
+----------------------------------
+HONEYWELL-CLEARWATER POSITION SET
+
+D01.03/04 (Latitude) = 13d5 876f 
+D01.05/08 (Longitude) = c52c 3ef3 
+
+ED01.03/04 (Latitude) = 13d5 876f 
+ED01.05/08 (Longitude) = c52c 3ef3 
+
+Subroutine PPOSLAB
+Time = 283019.76 Seconds
+----------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.43 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283022.63 Seconds
+-------------------------------------------------
+
+----------------------------
+Present Position Entered 
+
+D01.02 = 0
+ED01.02 = 0
+
+Subroutine PPOSENT
+Time = 283022.90 Seconds
+----------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 143 
+Reading ED01.03 MP 143 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.26 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.69 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283027.50 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283029.78 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 142 (CURRENT MISSION BIT WORD 8)===== 
+MP 142 S/B     0000
+MP 142 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 154 
+Reading ED01.03 MP 154 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.88 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.95 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283036.58 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283038.81 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 154 (HISTORY MISSION BIT WORD 8)===== 
+MP 154 S/B     0010
+MP 154 =   0010				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 191 
+Reading ED01.03 MP 191 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.09 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.78 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283045.58 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283047.81 Seconds
+-------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER WRITE 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.04 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 1.09 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283052.66 Seconds
+-------------------------------------------------
+
+Subroutine MPWRITE
+Time = 283054.89 Seconds
+-------------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 283061.21 Seconds
+-------------------------------------
+
+-----------------------------
+PRIMARY POWER REMOVED
+
+Power Off Time =  1.42 sec
+
+Subroutine PWRDOWN
+Time = 283064.14 Seconds
+-----------------------------
+
+-------------------------
+PWRUP Subroutine Started
+-------------------------
+-------------------------
+PRIMARY POWER APPLIED
+
+Standby reported in 0.009 seconds
+
+Subroutine PWRUP
+Time = 283106.64 Seconds
+-------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.44 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.86 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283108.54 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.77 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.67 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283110.47 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.69 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283112.54 Seconds
+-------------------------------------------------
+
+------------------------------------------------
+LAB FLAG Discrete Set via MP520
+
+Subroutine MP520
+Time = 283113.71 Seconds
+------------------------------------------------
+
+-----------------------------------
+MIL-STD-1553 INTERFACE TRANSMITTING
+-----------------------------------
+
+---------- 1553 Controlling Interface ---------
+
+===================================
+Initialize Ethernet Interface
+
+-----------------------------------------------------
+ETHERNET INTERFACE TRANSMITTING AFTER 1 ATTEMPTS
+-----------------------------------------------------
+
+EI33.01 = 0.000000
+EI33.02 = 192.000000
+EI33.03 = 168.000000
+EI33.04 = 1.000000
+EI33.05 = 10.000000
+EI33.06 = 2001.000000
+EI33.07 = 1
+EI33.08 = 1
+EI33.09 = 1
+EI33.10 = 1
+EI33.11 = 1
+EI33.12 = 1
+EI33.13 = 1
+EI33.14 = 1
+EI33.15 = 1
+EI33.16 = 1
+EI33.17 = 1
+EI33.18 = 1
+EI33.21 = 1
+EI33.22 = 1
+EI33.23 = 1
+EI33.25 = 1
+EI33.26 = 1
+EI33.27 = 1
+EI33.29 = 1
+EI33.30 = 1
+EI33.31 = 1
+EI33.32 = 1
+EI33.34 = 1
+EI33.35 = 1
+EI33.36 = 1
+EI33.37 = 1
+EI33.38 = 1
+EI33.39 = 1
+EI33.40 = 1
+EI33.41 = 1
+EI33.42 = 1
+EI33.43 = 1
+EI33.44 = 1
+EI33.45 = 1
+EI33.46 = 1
+EI33.47 = 1
+EI33.48 = 1
+EI33.49 = 1
+EI33.50 = 1
+EI33.51 = 1
+EI33.52 = 1
+EI33.53 = 1
+Subroutine ENABLE_ALL
+Time = 283129.09 Seconds
+-------------------------------------
+
+-------------------------
+CAL2 messages being received 1.027 seconds after enable_all
+LAB FLAG ENABLED
+-------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 283143.68 Seconds
+-------------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 283151.06 Seconds
+-------------------------------------
+
+------------------------------------
+GC Align Mode Commanded
+
+D01 FUNCTION SELECT CODE =  2
+ED01 FUNCTION SELECT CODE =  2
+
+Subroutine MODEGCAL
+Time = 283154.36 Seconds
+------------------------------------
+
+-------------------------------------
+GC Align Mode Entered
+
+Time In Loop = 0.27 Seconds
+
+I01P.29 BIT 04 S/B 800 
+I01P.29 BIT 04 = 800 				PASS
+
+I01B.29 BIT 04 S/B 800 
+I01B.29 BIT 04 = 800 				PASS
+
+EI01P.29 BIT 04 S/B 800 
+EI01P.29 BIT 04 = 800 				PASS
+
+EI01B.29 BIT 04 S/B 800 
+EI01B.29 BIT 04 = 800 				PASS
+
+Subroutine WAITGCAL
+Time = 283156.27 Seconds
+-------------------------------------
+
+----------------------------------
+HONEYWELL-CLEARWATER POSITION SET
+
+D01.03/04 (Latitude) = 13d5 876f 
+D01.05/08 (Longitude) = c52c 3ef3 
+
+ED01.03/04 (Latitude) = 13d5 876f 
+ED01.05/08 (Longitude) = c52c 3ef3 
+
+Subroutine PPOSLAB
+Time = 283157.73 Seconds
+----------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.52 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283160.74 Seconds
+-------------------------------------------------
+
+----------------------------
+Present Position Entered 
+
+D01.02 = 0
+ED01.02 = 0
+
+Subroutine PPOSENT
+Time = 283160.96 Seconds
+----------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 142 
+Reading ED01.03 MP 142 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.24 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.69 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283165.59 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283167.84 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 142 (CURRENT MISSION BIT WORD 8)===== 
+MP 142 S/B     0000
+MP 142 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 154 
+Reading ED01.03 MP 154 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.06 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283173.60 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283176.06 Seconds
+-------------------------------------
+
+----------------------------------------------
+=====MP 154 (HISTORY MISSION BIT WORD 8)===== 
+MP 154 S/B     0000
+MP 154 =   0000				PASS
+
+---------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 283186.49 Seconds
+-------------------------------------
+
+-----------------------------
+PRIMARY POWER REMOVED
+
+Power Off Time =  1.30 sec
+
+Subroutine PWRDOWN
+Time = 283189.19 Seconds
+-----------------------------
+
+===================== Test Case #2 =====================
+This test case verifies the MP's associated with the GPS Receiver
+
+********************************
+Test steps:
+ Power up the UUT.
+ Command GC Align.
+ Verify GC Align mode.
+ Verify config table option EGR Installed set True.
+ Send present position.
+ Command GPS Init mode.
+ Verify MP 210.
+ Command GPS NAV mode.
+ Command GPS receiver to SPS Mode.
+ Verify MP 210.
+ Verify GPS is valid.
+ Verify MP's 66-95, 187, 200-209, 214, 215.
+ Wait 10 seconds.
+ Verify MP's 214, 215 increase.
+ Verify MP's 216, 220-224, 230-254, 270-272.
+Power down
+********************************
+
+-------------------------
+PWRUP Subroutine Started
+-------------------------
+-------------------------
+PRIMARY POWER APPLIED
+
+Standby reported in 0.009 seconds
+
+Subroutine PWRUP
+Time = 283231.89 Seconds
+-------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.39 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 1.02 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283233.81 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.49 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.97 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283235.71 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.65 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.96 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283237.82 Seconds
+-------------------------------------------------
+
+------------------------------------------------
+LAB FLAG Discrete Set via MP520
+
+Subroutine MP520
+Time = 283239.04 Seconds
+------------------------------------------------
+
+-----------------------------------
+MIL-STD-1553 INTERFACE TRANSMITTING
+-----------------------------------
+
+---------- 1553 Controlling Interface ---------
+
+===================================
+Initialize Ethernet Interface
+
+-----------------------------------------------------
+ETHERNET INTERFACE TRANSMITTING AFTER 1 ATTEMPTS
+-----------------------------------------------------
+
+EI33.01 = 0.000000
+EI33.02 = 192.000000
+EI33.03 = 168.000000
+EI33.04 = 1.000000
+EI33.05 = 10.000000
+EI33.06 = 2001.000000
+EI33.07 = 1
+EI33.08 = 1
+EI33.09 = 1
+EI33.10 = 1
+EI33.11 = 1
+EI33.12 = 1
+EI33.13 = 1
+EI33.14 = 1
+EI33.15 = 1
+EI33.16 = 1
+EI33.17 = 1
+EI33.18 = 1
+EI33.21 = 1
+EI33.22 = 1
+EI33.23 = 1
+EI33.25 = 1
+EI33.26 = 1
+EI33.27 = 1
+EI33.29 = 1
+EI33.30 = 1
+EI33.31 = 1
+EI33.32 = 1
+EI33.34 = 1
+EI33.35 = 1
+EI33.36 = 1
+EI33.37 = 1
+EI33.38 = 1
+EI33.39 = 1
+EI33.40 = 1
+EI33.41 = 1
+EI33.42 = 1
+EI33.43 = 1
+EI33.44 = 1
+EI33.45 = 1
+EI33.46 = 1
+EI33.47 = 1
+EI33.48 = 1
+EI33.49 = 1
+EI33.50 = 1
+EI33.51 = 1
+EI33.52 = 1
+EI33.53 = 1
+Subroutine ENABLE_ALL
+Time = 283254.14 Seconds
+-------------------------------------
+
+-------------------------
+CAL2 messages being received 1.028 seconds after enable_all
+LAB FLAG ENABLED
+-------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.28 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 283268.85 Seconds
+-------------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 283276.50 Seconds
+-------------------------------------
+
+------------------------------------
+GC Align Mode Commanded
+
+D01 FUNCTION SELECT CODE =  2
+ED01 FUNCTION SELECT CODE =  2
+
+Subroutine MODEGCAL
+Time = 283279.85 Seconds
+------------------------------------
+
+-------------------------------------
+GC Align Mode Entered
+
+Time In Loop = 0.27 Seconds
+
+I01P.29 BIT 04 S/B 800 
+I01P.29 BIT 04 = 800 				PASS
+
+I01B.29 BIT 04 S/B 800 
+I01B.29 BIT 04 = 800 				PASS
+
+EI01P.29 BIT 04 S/B 800 
+EI01P.29 BIT 04 = 800 				PASS
+
+EI01B.29 BIT 04 S/B 800 
+EI01B.29 BIT 04 = 800 				PASS
+
+Subroutine WAITGCAL
+Time = 283281.67 Seconds
+-------------------------------------
+
+----------------------------------
+HONEYWELL-CLEARWATER POSITION SET
+
+D01.03/04 (Latitude) = 13d5 876f 
+D01.05/08 (Longitude) = c52c 3ef3 
+
+ED01.03/04 (Latitude) = 13d5 876f 
+ED01.05/08 (Longitude) = c52c 3ef3 
+
+Subroutine PPOSLAB
+Time = 283283.11 Seconds
+----------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.24 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.71 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283286.62 Seconds
+-------------------------------------------------
+
+----------------------------
+Present Position Entered 
+
+D01.02 = 0
+ED01.02 = 0
+
+Subroutine PPOSENT
+Time = 283286.85 Seconds
+----------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 283290.72 Seconds
+-------------------------------------
+
+---------------------------------
+EGR Initialization Mode Commanded
+
+I-1.01 = a704
+EI-1.01 = a704
+
+Subroutine GPMINIT
+Time = 283302.01 Seconds
+---------------------------------
+
+-------------------------------------
+EGR Actual Mode = INIT
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT's 01/02 S/B 1 
+G-1.02 BIT's 01/02 = 1 				PASS
+
+EG-1.02 BIT's 01/02 S/B 1 
+EG-1.02 BIT's 01/02 = 1 				PASS
+
+G-9.01 BIT's 01/02 S/B 1 
+G-9.01 BIT's 01/02 = 1 				PASS
+
+EG-9.01 BIT's 01/02 S/B 1 
+EG-9.01 BIT's 01/02 = 1 				PASS
+
+Subroutine GPINWAIT
+Time = 283303.81 Seconds
+-------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 210 
+Reading ED01.03 MP 210 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.35 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.80 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283305.75 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283307.98 Seconds
+-------------------------------------
+
+----------------------------
+=====MP 210 (GPS MODE)===== 
+MP 210 S/B     1
+MP 210 =      1				PASS
+
+---------------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 283313.39 Seconds
+-------------------------------------
+
+-------------------------------
+EGR Navigate Mode Commanded
+
+I-1.01 = c704
+EI-1.01 = c704
+
+Subroutine GPMNAV
+Time = 283315.70 Seconds
+-------------------------------
+
+-------------------------------------
+EGR Actual Mode = NAV
+
+Time In Loop = 0.92 Seconds
+
+G-1.02 BIT's 01/02 S/B 2 
+G-1.02 BIT's 01/02 = 2 				PASS
+
+EG-1.02 BIT's 01/02 S/B 2 
+EG-1.02 BIT's 01/02 = 2 				PASS
+
+G-9.01 BIT's 01/02 S/B 2 
+G-9.01 BIT's 01/02 = 2 				PASS
+
+EG-9.01 BIT's 01/02 S/B 2 
+EG-9.01 BIT's 01/02 = 2 				PASS
+
+Subroutine GPNAWAIT
+Time = 283318.16 Seconds
+-------------------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 283320.12 Seconds
+-------------------------------------
+
+-------------------------------
+EGR C/A Code Commanded
+
+I-1.05 = d000
+I-1.01 BIT 13 = 1
+
+EI-1.05 = d000
+EI-1.01 BIT 13 = 1
+
+Subroutine GPSCA
+Time = 283322.45 Seconds
+-------------------------------
+
+-------------------------------------
+SIS SPS MODE SET
+
+Time In Loop = 0.27 Seconds
+
+G-1.05 BIT's 9/10 S/B 3 
+G-1.05 BIT's 9/10 = 3 				PASS
+
+EG-1.05 BIT's 9/10 S/B 3 
+EG-1.05 BIT's 9/10 = 3				PASS
+
+G-9.20 BIT's 9/10 S/B 3 
+G-9.20 BIT's 9/10 = 3 				PASS
+
+EG-9.20 BIT's 9/10 S/B 3 
+EG-9.20 BIT's 9/10 = 3				PASS
+
+Subroutine SPSECHO
+Time = 283324.26 Seconds
+-------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 210 
+Reading ED01.03 MP 210 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.78 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.92 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283326.73 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283328.97 Seconds
+-------------------------------------
+
+----------------------------
+=====MP 210 (GPS MODE)===== 
+MP 210 S/B     2
+MP 210 =      2				PASS
+
+---------------------------------
+
+---------------------------------------
+GDOP < 6 For > 5 Seconds
+
+Time In Loop = 40.52 Seconds
+
+ST6.11 S/B <= 6.000000 
+ST6.11 = 1.531250 				PASS
+
+G-9.01 BIT 00 S/B 1 
+G-9.01 BIT 00 = 1 				PASS
+
+G-1.04 = 8001
+G-1.05 = e260
+
+Subroutine GOODDOPS
+Time = 283379.08 Seconds
+---------------------------------------
+
+-----------------------------------------
+Blended Integrity Enabled, SPS Operation
+Valid GPS Solution - Pass
+
+Time In Loop = 1.03 Seconds
+
+NAVIGATION MODE WORD
+G-9.01 = d080
+
+GPS EHE
+G-9.18 = 13.00 Feet
+
+GPS EVE
+G-9.19 = 14.00 Feet
+
+GPS VELOCITY EAST 
+G-9.11 = -0.01 Ft/Sec
+
+GPS VELOCITY NORTH
+G-9.13 = -0.00 Ft/Sec
+
+CHI SQUARE REJECT COUNTER
+ST4.29 = 0.0000 Rejects
+
+NUMBER SV VALID
+ST6.16 = 10
+
+Subroutine VALIDGPS
+Time = 283380.67 Seconds
+-----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 200 
+Reading ED01.03 MP 200 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.45 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283382.75 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283384.98 Seconds
+-------------------------------------
+
+-----------------------------------------
+=====MP 200 (# VALID SV'S TRACKING)===== 
+MP 200 S/B X 
+X May be 1 - 9, A, B or C 
+MP 200 =      A				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 202 
+Reading ED01.03 MP 202 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.06 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.78 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283389.65 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283391.88 Seconds
+-------------------------------------
+
+--------------------------------
+=====MP 202 (GPS LATITUDE)===== 
+MP 202 S/B 27535 +/- 5. 
+MP 202 =  27535				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 203 
+Reading ED01.03 MP 203 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.12 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283397.73 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283400.11 Seconds
+-------------------------------------
+
+---------------------------------
+=====MP 203 (GPS LONGITUDE)===== 
+MP 203 S/B - 82435 +/- 5. 
+MP 203 = - 82435				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 204 
+Reading ED01.03 MP 204 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.89 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283405.72 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283407.98 Seconds
+-------------------------------------
+
+--------------------------------------
+=====MP 204 (GPS VELOCITY NORTH)===== 
+MP 204 S/B 0 +/- 50. 
+MP 204 = -     0				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 205 
+Reading ED01.03 MP 205 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.49 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.70 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283411.58 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283413.86 Seconds
+-------------------------------------
+
+-------------------------------------
+=====MP 205 (GPS VELOCITY EAST)===== 
+MP 205 S/B 0 +/- 50. 
+MP 205 =      0				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 206 
+Reading ED01.03 MP 206 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.64 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283417.72 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283420.00 Seconds
+-------------------------------------
+
+-----------------------------------
+=====MP 206 (GPS VELOCITY UP)===== 
+MP 206 S/B 0 +/- 50. 
+MP 206 = -     0				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 207 
+Reading ED01.03 MP 207 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.57 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.69 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283423.66 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283425.89 Seconds
+-------------------------------------
+
+------------------------------------
+=====MP 207 (GPS POSITION FOM)===== 
+MP 207 S/B X. 
+X May be 0 to 9 
+MP 207 =      1				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 208 
+Reading ED01.03 MP 208 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.67 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.82 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283429.89 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283432.12 Seconds
+-------------------------------------
+
+-----------------------------
+=====MP 208 (GPS DATUM)===== 
+MP 208 S/B XX. 
+XX May be 00 to 79
+MP 208 =     47				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 209 
+Reading ED01.03 MP 209 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.91 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283436.76 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283438.99 Seconds
+-------------------------------------
+
+--------------------------------
+=====MP 209 (GPS ALTITUDE)===== 
+MP 209 S/B 80 +/- 32. 
+MP 209 =     68				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 214 
+Reading ED01.03 MP 214 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.88 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.81 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283443.60 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283445.83 Seconds
+-------------------------------------
+
+------------------------------------
+=====MP 214 (GPS TIME OF WEEK)===== 
+MP 214 S/B 0 to 604799. 
+MP 214 = 425765				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 215 
+Reading ED01.03 MP 215 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.70 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283451.68 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283453.91 Seconds
+-------------------------------------
+
+----------------------------
+=====MP 215 (UTC TIME)===== 
+MP 215 S/B 0 to 86399. 
+MP 215 =  80155				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 214 
+Reading ED01.03 MP 214 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.34 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.65 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283468.77 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283471.00 Seconds
+-------------------------------------
+
+------------------------------------
+=====MP 214 (GPS TIME OF WEEK)===== 
+MP 214 S/B Greater Than Previous MP 214 
+MP 214 = 425790				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 215 
+Reading ED01.03 MP 215 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.73 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.70 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283476.78 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283479.01 Seconds
+-------------------------------------
+
+----------------------------
+=====MP 215 (UTC TIME)===== 
+MP 215 S/B Greater Than Previous MP 215 
+MP 215 =  80180				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 216 
+Reading ED01.03 MP 216 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.30 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.69 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283483.74 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283486.02 Seconds
+-------------------------------------
+
+---------------------------------------
+=====MP 216 (GPS CLOCK FREQUENCY)===== 
+MP 216 S/B 0 +/- 99999. 
+MP 216 = -  1517				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 220 
+Reading ED01.03 MP 220 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.60 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.59 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283490.83 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283493.11 Seconds
+-------------------------------------
+
+------------------------
+=====MP 220 (GDOP)===== 
+MP 220 S/B 0 to 5110. 
+MP 220 =     15				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 221 
+Reading ED01.03 MP 221 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.07 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283496.74 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283498.97 Seconds
+-------------------------------------
+
+------------------------
+=====MP 221 (PDOP)===== 
+MP 221 S/B 0 to 5110 
+MP 221 =     14				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 222 
+Reading ED01.03 MP 222 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.42 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283502.93 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283505.21 Seconds
+-------------------------------------
+
+------------------------
+=====MP 222 (VDOP)===== 
+MP 222 S/B 0 to 5110 
+MP 222 =     10				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 223 
+Reading ED01.03 MP 223 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.15 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283509.83 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283512.11 Seconds
+-------------------------------------
+
+------------------------
+=====MP 223 (HDOP)===== 
+MP 223 S/B 0 to 5110 
+MP 223 =      9				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 224 
+Reading ED01.03 MP 224 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.41 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.70 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283515.75 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283517.98 Seconds
+-------------------------------------
+
+------------------------
+=====MP 224 (TDOP)===== 
+MP 224 S/B 0 to 5110 
+MP 224 =      7				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 230 
+Reading ED01.03 MP 230 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.56 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.79 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283521.83 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283524.06 Seconds
+-------------------------------------
+
+----------------------------------
+=====MP 230 (CHANNEL 1-SVID)===== 
+MP 230 S/B 0 to 32. 
+MP 230 =      1				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 231 
+Reading ED01.03 MP 231 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.50 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283527.84 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283530.07 Seconds
+-------------------------------------
+
+-------------------------------------
+=====MP 231 (CHANNEL 1-AZIMUTH)===== 
+MP 231 S/B 0000 +/- 180000. 
+MP 231 =  41417				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 232 
+Reading ED01.03 MP 232 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.97 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.90 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283535.81 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283538.09 Seconds
+-------------------------------------
+
+---------------------------------------
+=====MP 232 (CHANNEL 1-ELEVATION)===== 
+MP 232 S/B 0000 +/- 90000. 
+MP 232 =   6249				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 233 
+Reading ED01.03 MP 233 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.35 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.70 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283542.75 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283545.03 Seconds
+-------------------------------------
+
+-----------------------------------
+=====MP 233 (CHANNEL 1-STATE)===== 
+MP 233 S/B 0 to 5 or 7 
+MP 233 =      5				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 234 
+Reading ED01.03 MP 234 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.50 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.69 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283548.67 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283550.90 Seconds
+-------------------------------------
+
+----------------------------------
+=====MP 234 (CHANNEL 1-C/No)===== 
+MP 234 S/B 0 to 630. 
+MP 234 =    400				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 235 
+Reading ED01.03 MP 235 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.04 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283555.81 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283558.05 Seconds
+-------------------------------------
+
+----------------------------------
+=====MP 235 (CHANNEL 2-SVID)===== 
+MP 235 S/B 0 to 32. 
+MP 235 =      3				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 236 
+Reading ED01.03 MP 236 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.35 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283561.66 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283563.94 Seconds
+-------------------------------------
+
+-------------------------------------
+=====MP 236 (CHANNEL 2-AZIMUTH)===== 
+MP 236 S/B 0000 +/- 180000. 
+MP 236 =  59599				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 237 
+Reading ED01.03 MP 237 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.65 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283569.67 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283571.91 Seconds
+-------------------------------------
+
+---------------------------------------
+=====MP 237 (CHANNEL 2-ELEVATION)===== 
+MP 237 S/B 0000 +/- 90000. 
+MP 237 =  25188				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 238 
+Reading ED01.03 MP 238 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.02 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.90 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283577.74 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283579.97 Seconds
+-------------------------------------
+
+-----------------------------------
+=====MP 238 (CHANNEL 2-STATE)===== 
+MP 238 S/B 0 to 5 or 7 
+MP 238 =      5				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 239 
+Reading ED01.03 MP 239 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.47 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.79 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283583.81 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283586.04 Seconds
+-------------------------------------
+
+----------------------------------
+=====MP 239 (CHANNEL 2-C/No)===== 
+MP 239 S/B 0 to 630. 
+MP 239 =    420				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 240 
+Reading ED01.03 MP 240 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.79 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283590.78 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283593.02 Seconds
+-------------------------------------
+
+----------------------------------
+=====MP 240 (CHANNEL 3-SVID)===== 
+MP 240 S/B 0 to 32 
+MP 240 =      6				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 240 
+Reading ED01.03 MP 240 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.35 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.94 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283596.74 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283598.97 Seconds
+-------------------------------------
+
+-------------------------------------
+=====MP 241 (CHANNEL 3-AZIMUTH)===== 
+MP 241 S/B 0000 +/- 180000. 
+MP 241 =      6				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 242 
+Reading ED01.03 MP 242 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.52 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.79 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283604.30 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283606.56 Seconds
+-------------------------------------
+
+---------------------------------------
+=====MP 242 (CHANNEL 3-ELEVATION)===== 
+MP 242 S/B 0000 +/- 90000. 
+MP 242 =  68381				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 243 
+Reading ED01.03 MP 243 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.35 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.69 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283611.73 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283613.96 Seconds
+-------------------------------------
+
+-----------------------------------
+=====MP 243 (CHANNEL 3-STATE)===== 
+MP 243 S/B 0 to 5 or 7 
+MP 243 =      5				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 244 
+Reading ED01.03 MP 244 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.48 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.91 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283617.83 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283620.11 Seconds
+-------------------------------------
+
+----------------------------------
+=====MP 244 (CHANNEL 3-C/No)===== 
+MP 244 S/B 0 TO 630 
+MP 244 =    450				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 245 
+Reading ED01.03 MP 245 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.80 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283624.81 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283627.04 Seconds
+-------------------------------------
+
+----------------------------------
+=====MP 245 (CHANNEL 4-SVID)===== 
+MP 245 S/B 0 TO 32 
+MP 245 =     11				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 246 
+Reading ED01.03 MP 246 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.88 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.92 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283631.75 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283634.02 Seconds
+-------------------------------------
+
+-------------------------------------
+=====MP 246 (CHANNEL 4-AZIMUTH)===== 
+MP 246 S/B 0000 +/- 180000. 
+MP 246 = -132329				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 247 
+Reading ED01.03 MP 247 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.76 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.90 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283639.80 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283642.10 Seconds
+-------------------------------------
+
+---------------------------------------
+=====MP 247 (CHANNEL 4-ELEVATION)===== 
+MP 247 S/B 0000 +/- 90000. 
+MP 247 =  24562				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 248 
+Reading ED01.03 MP 248 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.96 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283647.71 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283649.99 Seconds
+-------------------------------------
+
+-----------------------------------
+=====MP 248 (CHANNEL 4-STATE)===== 
+MP 248 S/B 0 TO 5 or 7 
+MP 248 =      5				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 249 
+Reading ED01.03 MP 249 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.45 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283653.86 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283656.09 Seconds
+-------------------------------------
+
+----------------------------------
+=====MP 249 (CHANNEL 4-C/No)===== 
+MP 249 S/B 0 to 630 
+MP 249 =    440				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 250 
+Reading ED01.03 MP 250 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.79 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283660.78 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283663.11 Seconds
+-------------------------------------
+
+----------------------------------
+=====MP 250 (CHANNEL 5-SVID)===== 
+MP 250 S/B 0 to 32 
+MP 250 =     14				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 251 
+Reading ED01.03 MP 251 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.03 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283667.73 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283670.00 Seconds
+-------------------------------------
+
+-------------------------------------
+=====MP 251 (CHANNEL 5-AZIMUTH)===== 
+MP 251 S/B 0000 +/- 180000. 
+MP 251 = 124165				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 252 
+Reading ED01.03 MP 252 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.71 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283675.79 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283678.07 Seconds
+-------------------------------------
+
+---------------------------------------
+=====MP 252 (CHANNEL 5-ELEVATION)===== 
+MP 252 S/B 0000 +/- 90000. 
+MP 252 =  60345				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 253 
+Reading ED01.03 MP 253 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.04 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.60 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283683.73 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283685.96 Seconds
+-------------------------------------
+
+-----------------------------------
+=====MP 253 (CHANNEL 5-STATE)===== 
+MP 253 S/B 0 to 5 or 7 
+MP 253 =      5				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 254 
+Reading ED01.03 MP 254 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.69 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.79 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283689.86 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283692.10 Seconds
+-------------------------------------
+
+----------------------------------
+=====MP 254 (CHANNEL 5-C/No)===== 
+MP 254 S/B 0 to 630 
+MP 254 =    480				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 270 
+Reading ED01.03 MP 270 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.69 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.90 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283696.89 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283699.12 Seconds
+-------------------------------------
+
+------------------------------------------------
+=====MP 270 (GPS/INS Position Delta North)===== 
+MP 270 S/B 0 +/- 9999 
+MP 270 = -     7				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 271 
+Reading ED01.03 MP 271 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.45 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283702.97 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283705.20 Seconds
+-------------------------------------
+
+-----------------------------------------------
+=====MP 271 (GPS/INS Position Delta East)===== 
+MP 271 S/B 0 +/- 9999 
+MP 271 =      2				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 272 
+Reading ED01.03 MP 272 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.40 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283708.88 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283711.12 Seconds
+-------------------------------------
+
+---------------------------------------------
+=====MP 272 (GPS/INS Position Delta Up)===== 
+MP 272 S/B 0 +/- 9999 
+MP 272 =     49				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 513 
+Reading ED01.03 MP 513 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.99 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.84 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283715.77 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283718.00 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 513 (Disable GPS Processing in SKF)===== 
+MP 513 S/B 0 or 1
+MP 513 =      0				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 524 
+Reading ED01.03 MP 524 
+
+-------------------------------------------------
+Data Ready Acknowledge Flag NOT Set in 12.09 Seconds
+
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283734.21 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283736.50 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 524 (I-63 Bit 14/15 control)===== 
+MP 524 S/B 0 to 3
+MP 524 =      0				PASS
+----------------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 283744.97 Seconds
+-------------------------------------
+
+-----------------------------
+PRIMARY POWER REMOVED
+
+Power Off Time =  1.52 sec
+
+Subroutine PWRDOWN
+Time = 283747.85 Seconds
+-----------------------------
+
+===================== Test Case #3 ===================== 
+This test case verifies the rest of the MP's
+
+********************************
+ Power up the UUT.
+ Command GPS Init mode.
+ Command GC Align.
+ Verify GC Align mode.
+ Send alternate present position.
+ Verify MP's 0, 3-6.
+ Send lab present position.
+ Verify MP's 3-6, 18.
+ Set TAS = 100 kts.
+ Verify MP 18.
+ Set TAS = 0 kts.
+ Verify MP's 18, 34.
+ Power down the UUT.
+ Prompt to set pressure altitude to 80 ft.
+ Command GC Align.
+ Power up the UUT.
+ Verify GC Align mode.
+ Send present position.
+ Disable NARF.
+ Verify Nav Ready is set.
+ Command NAV.
+ Verify NAV mode.
+ Verify MP's 34, 60, 101-103.
+ Check config table option EGR Installed and verify
+ MP 104.
+ Verify MP's 107, 111-112.
+ Prompt to set pressure altitude to 200 ft.
+ Wait 10 seconds.
+ Verify MP 112.
+ Prompt to reset pressure altitude to 80 ft.
+ Verify MP 113.
+ Wait 20 seconds.
+ Verify MP 113 increments.
+ Verify MP's 170-172.
+ Set X velocity to 20 kts.
+ Verify MP 170.
+ Reset X velocity to 0 kts.
+ Verify MP 283.
+ Verify MP's 284-286, 290-292, 400-401, 500-504.
+ Power down the UUT.
+ Power Up the UUT.
+ Verify MP's 109.
+ Verify MP's 400-415, 530-532, 540, 550-551.
+ Power down the UUT.
+ Clear flight data.
+
+********************************
+
+-------------------------
+PWRUP Subroutine Started
+-------------------------
+-------------------------
+PRIMARY POWER APPLIED
+
+Standby reported in 0.009 seconds
+
+Subroutine PWRUP
+Time = 283790.74 Seconds
+-------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.64 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283792.86 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.68 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.63 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283794.70 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.77 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.91 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283796.84 Seconds
+-------------------------------------------------
+
+------------------------------------------------
+LAB FLAG Discrete Set via MP520
+
+Subroutine MP520
+Time = 283798.01 Seconds
+------------------------------------------------
+
+-----------------------------------
+MIL-STD-1553 INTERFACE TRANSMITTING
+-----------------------------------
+
+---------- 1553 Controlling Interface ---------
+
+===================================
+Initialize Ethernet Interface
+
+-----------------------------------------------------
+ETHERNET INTERFACE TRANSMITTING AFTER 1 ATTEMPTS
+-----------------------------------------------------
+
+EI33.01 = 0.000000
+EI33.02 = 192.000000
+EI33.03 = 168.000000
+EI33.04 = 1.000000
+EI33.05 = 10.000000
+EI33.06 = 2001.000000
+EI33.07 = 1
+EI33.08 = 1
+EI33.09 = 1
+EI33.10 = 1
+EI33.11 = 1
+EI33.12 = 1
+EI33.13 = 1
+EI33.14 = 1
+EI33.15 = 1
+EI33.16 = 1
+EI33.17 = 1
+EI33.18 = 1
+EI33.21 = 1
+EI33.22 = 1
+EI33.23 = 1
+EI33.25 = 1
+EI33.26 = 1
+EI33.27 = 1
+EI33.29 = 1
+EI33.30 = 1
+EI33.31 = 1
+EI33.32 = 1
+EI33.34 = 1
+EI33.35 = 1
+EI33.36 = 1
+EI33.37 = 1
+EI33.38 = 1
+EI33.39 = 1
+EI33.40 = 1
+EI33.41 = 1
+EI33.42 = 1
+EI33.43 = 1
+EI33.44 = 1
+EI33.45 = 1
+EI33.46 = 1
+EI33.47 = 1
+EI33.48 = 1
+EI33.49 = 1
+EI33.50 = 1
+EI33.51 = 1
+EI33.52 = 1
+EI33.53 = 1
+Subroutine ENABLE_ALL
+Time = 283813.41 Seconds
+-------------------------------------
+
+-------------------------
+CAL2 messages being received 1.027 seconds after enable_all
+LAB FLAG ENABLED
+-------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 283827.95 Seconds
+-------------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 283835.40 Seconds
+-------------------------------------
+
+------------------------------------
+Standby Mode Commanded
+
+D01 FUNCTION SELECT CODE = 31
+ED01 FUNCTION SELECT CODE = 31
+
+Subroutine MODESTBY
+Time = 283838.73 Seconds
+------------------------------------
+
+-------------------------------------
+Standby Mode Entered
+
+Time In Loop = 0.27 Seconds
+
+I01P.29 BIT 01 S/B 4000 
+I01P.29 BIT 01 = 4000 				PASS
+
+I01B.29 BIT 01 S/B 4000 
+I01B.29 BIT 01 = 4000 				PASS
+
+EI01P.29 BIT 01 S/B 4000 
+EI01P.29 BIT 01 = 4000 				PASS
+
+EI01B.29 BIT 01 S/B 4000 
+EI01B.29 BIT 01 = 4000 				PASS
+
+Subroutine WAITSTBY
+Time = 283840.63 Seconds
+-------------------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 283842.61 Seconds
+-------------------------------------
+
+---------------------------------
+EGR Initialization Mode Commanded
+
+I-1.01 = a704
+EI-1.01 = a704
+
+Subroutine GPMINIT
+Time = 283853.90 Seconds
+---------------------------------
+
+-------------------------------------
+EGR Actual Mode = INIT
+
+Time In Loop = 0.27 Seconds
+
+G-1.02 BIT's 01/02 S/B 1 
+G-1.02 BIT's 01/02 = 1 				PASS
+
+EG-1.02 BIT's 01/02 S/B 1 
+EG-1.02 BIT's 01/02 = 1 				PASS
+
+G-9.01 BIT's 01/02 S/B 1 
+G-9.01 BIT's 01/02 = 1 				PASS
+
+EG-9.01 BIT's 01/02 S/B 1 
+EG-9.01 BIT's 01/02 = 1 				PASS
+
+Subroutine GPINWAIT
+Time = 283855.99 Seconds
+-------------------------------------
+
+------------------------------------
+GC Align Mode Commanded
+
+D01 FUNCTION SELECT CODE =  2
+ED01 FUNCTION SELECT CODE =  2
+
+Subroutine MODEGCAL
+Time = 283859.31 Seconds
+------------------------------------
+
+-------------------------------------
+GC Align Mode Entered
+
+Time In Loop = 0.27 Seconds
+
+I01P.29 BIT 04 S/B 800 
+I01P.29 BIT 04 = 800 				PASS
+
+I01B.29 BIT 04 S/B 800 
+I01B.29 BIT 04 = 800 				PASS
+
+EI01P.29 BIT 04 S/B 800 
+EI01P.29 BIT 04 = 800 				PASS
+
+EI01B.29 BIT 04 S/B 800 
+EI01B.29 BIT 04 = 800 				PASS
+
+Subroutine WAITGCAL
+Time = 283861.13 Seconds
+-------------------------------------
+
+----------------------------------
+POSITION 0.5 Nm SOUTH/4 Nm EAST OF
+HONEYWELL-CLEARWATER SET
+
+D01.03 = 13d3
+D01.04 = f1aa
+D01.05 = c539
+D01.06 = 86e0
+
+ED01.03 = 13d3
+ED01.04 = f1aa
+ED01.05 = c539
+ED01.06 = 86e0
+
+Subroutine PPOSGTWY
+Time = 283862.67 Seconds
+----------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.79 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.79 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283866.04 Seconds
+-------------------------------------------------
+
+----------------------------
+Present Position Entered 
+
+D01.02 = 0
+ED01.02 = 0
+
+Subroutine PPOSENT
+Time = 283866.26 Seconds
+----------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 0 
+Reading ED01.03 MP 0 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.00 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.90 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283870.96 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283873.19 Seconds
+-------------------------------------
+
+----------------------------------------
+=====MP 0 (MANUFACTURER'S ID CODE)===== 
+MP 0 S/B     6
+MP 0 =      6				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 3 
+Reading ED01.03 MP 3 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.67 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.90 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283878.96 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283881.19 Seconds
+-------------------------------------
+
+-----------------------------------------
+=====MP 3 (INITIALIZATION LATITUDE)===== 
+MP 3 S/B     27530
+MP 3 =  27530				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 4 
+Reading ED01.03 MP 4 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.25 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.91 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283887.84 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283890.07 Seconds
+-------------------------------------
+
+------------------------------------------
+=====MP 4 (INITIALIZATION LONGITUDE)===== 
+MP 4 S/B     -82392
+MP 4 = - 82392				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 5 
+Reading ED01.03 MP 5 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.15 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283896.89 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283899.12 Seconds
+-------------------------------------
+
+-------------------------------------
+=====MP 5 (PRESENT PI LATITUDE)===== 
+MP 5 S/B 27530 +/- 5. 
+MP 5 =  27530				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 6 
+Reading ED01.03 MP 6 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.10 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.93 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283904.91 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283907.14 Seconds
+-------------------------------------
+
+--------------------------------------
+=====MP 6 (PRESENT PI LONGITUDE)===== 
+MP 6 S/B - 82392 +/- 5. 
+MP 6 = - 82392				PASS
+----------------------------------------
+
+----------------------------------
+HONEYWELL-CLEARWATER POSITION SET
+
+D01.03/04 (Latitude) = 13d5 876f 
+D01.05/08 (Longitude) = c52c 3ef3 
+
+ED01.03/04 (Latitude) = 13d5 876f 
+ED01.05/08 (Longitude) = c52c 3ef3 
+
+Subroutine PPOSLAB
+Time = 283911.76 Seconds
+----------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.80 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.59 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283914.81 Seconds
+-------------------------------------------------
+
+----------------------------
+Present Position Entered 
+
+D01.02 = 0
+ED01.02 = 0
+
+Subroutine PPOSENT
+Time = 283915.03 Seconds
+----------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 3 
+Reading ED01.03 MP 3 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.06 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283919.88 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283922.11 Seconds
+-------------------------------------
+
+-----------------------------------------
+=====MP 3 (INITIALIZATION LATITUDE)===== 
+MP 3 S/B     27535
+MP 3 =  27535				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 4 
+Reading ED01.03 MP 4 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.39 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283928.97 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283931.20 Seconds
+-------------------------------------
+
+------------------------------------------
+=====MP 4 (INITIALIZATION LONGITUDE)===== 
+MP 4 S/B     -82435
+MP 4 = - 82435				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 5 
+Reading ED01.03 MP 5 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.80 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.81 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283938.81 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283941.04 Seconds
+-------------------------------------
+
+-------------------------------------
+=====MP 5 (PRESENT PI LATITUDE)===== 
+MP 5 S/B 27535 +/- 5. 
+MP 5 =  27535				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 6 
+Reading ED01.03 MP 6 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.26 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.70 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283945.81 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283948.09 Seconds
+-------------------------------------
+
+--------------------------------------
+=====MP 6 (PRESENT PI LONGITUDE)===== 
+MP 6 S/B - 82435 +/- 5. 
+MP 6 = - 82435				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 18 
+Reading ED01.03 MP 18 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.21 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.71 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283953.79 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283956.07 Seconds
+-------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER WRITE 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.05 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 1.01 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283960.77 Seconds
+-------------------------------------------------
+
+Subroutine MPWRITE
+Time = 283963.00 Seconds
+-------------------------------------
+
+---------------------------------------
+=====MP 18 (MANUALLY ENTERED TAS)===== 
+MP 18 S/B     1000
+MP 18 =   1000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 18 
+Reading ED01.03 MP 18 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.99 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.95 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283969.89 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283972.13 Seconds
+-------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER WRITE 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.05 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283976.92 Seconds
+-------------------------------------------------
+
+Subroutine MPWRITE
+Time = 283979.20 Seconds
+-------------------------------------
+
+---------------------------------------
+=====MP 18 (MANUALLY ENTERED TAS)===== 
+MP 18 S/B     0
+MP 18 =      0				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 34 
+Reading ED01.03 MP 34 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.91 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.95 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 283985.16 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 283987.40 Seconds
+-------------------------------------
+
+-----------------------------------
+=====MP 34 (EGI ON/OFF CYCLES)=====
+MP 34 S/B > 0
+MP 34 =      4				FAIL
+----------------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 283995.56 Seconds
+-------------------------------------
+
+-----------------------------
+PRIMARY POWER REMOVED
+
+Power Off Time =  1.31 sec
+
+Subroutine PWRDOWN
+Time = 283998.24 Seconds
+-----------------------------
+
+-------------------------
+PWRUP Subroutine Started
+-------------------------
+-------------------------
+PRIMARY POWER APPLIED
+
+Standby reported in 0.055 seconds
+
+Subroutine PWRUP
+Time = 284040.82 Seconds
+-------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.61 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.97 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284042.96 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.67 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.67 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284044.74 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.68 Seconds
+I06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.94 Seconds
+I06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284046.85 Seconds
+-------------------------------------------------
+
+------------------------------------------------
+LAB FLAG Discrete Set via MP520
+
+Subroutine MP520
+Time = 284048.06 Seconds
+------------------------------------------------
+
+-----------------------------------
+MIL-STD-1553 INTERFACE TRANSMITTING
+-----------------------------------
+
+---------- 1553 Controlling Interface ---------
+
+===================================
+Initialize Ethernet Interface
+
+-----------------------------------------------------
+ETHERNET INTERFACE TRANSMITTING AFTER 1 ATTEMPTS
+-----------------------------------------------------
+
+EI33.01 = 0.000000
+EI33.02 = 192.000000
+EI33.03 = 168.000000
+EI33.04 = 1.000000
+EI33.05 = 10.000000
+EI33.06 = 2001.000000
+EI33.07 = 1
+EI33.08 = 1
+EI33.09 = 1
+EI33.10 = 1
+EI33.11 = 1
+EI33.12 = 1
+EI33.13 = 1
+EI33.14 = 1
+EI33.15 = 1
+EI33.16 = 1
+EI33.17 = 1
+EI33.18 = 1
+EI33.21 = 1
+EI33.22 = 1
+EI33.23 = 1
+EI33.25 = 1
+EI33.26 = 1
+EI33.27 = 1
+EI33.29 = 1
+EI33.30 = 1
+EI33.31 = 1
+EI33.32 = 1
+EI33.34 = 1
+EI33.35 = 1
+EI33.36 = 1
+EI33.37 = 1
+EI33.38 = 1
+EI33.39 = 1
+EI33.40 = 1
+EI33.41 = 1
+EI33.42 = 1
+EI33.43 = 1
+EI33.44 = 1
+EI33.45 = 1
+EI33.46 = 1
+EI33.47 = 1
+EI33.48 = 1
+EI33.49 = 1
+EI33.50 = 1
+EI33.51 = 1
+EI33.52 = 1
+EI33.53 = 1
+Subroutine ENABLE_ALL
+Time = 284063.18 Seconds
+-------------------------------------
+
+-------------------------
+CAL2 messages being received 1.027 seconds after enable_all
+LAB FLAG ENABLED
+-------------------------
+
+-------------------------------------
+EGR BIT Not In Progress
+
+Time In Loop = 0.28 Seconds
+
+G-1.02 BIT 03 S/B 1 
+G-1.02 BIT 03 = 1 				PASS
+
+EG-1.02 BIT 03 S/B 1 
+EG-1.02 BIT 03 = 1 				PASS
+
+G-9.01 BIT 03 S/B 1 
+G-9.01 BIT 03 = 1 				PASS
+
+EG-9.01 BIT 03 S/B 1 
+EG-9.01 BIT 03 = 1 				PASS
+
+Subroutine GPNOBIT
+Time = 284077.88 Seconds
+-------------------------------------
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 0
+EI14.20 = 0
+
+Subroutine LBITCHK
+Time = 284085.36 Seconds
+-------------------------------------
+
+------------------------------------
+GC Align Mode Commanded
+
+D01 FUNCTION SELECT CODE =  2
+ED01 FUNCTION SELECT CODE =  2
+
+Subroutine MODEGCAL
+Time = 284088.71 Seconds
+------------------------------------
+
+-------------------------------------
+GC Align Mode Entered
+
+Time In Loop = 0.27 Seconds
+
+I01P.29 BIT 04 S/B 800 
+I01P.29 BIT 04 = 800 				PASS
+
+I01B.29 BIT 04 S/B 800 
+I01B.29 BIT 04 = 800 				PASS
+
+EI01P.29 BIT 04 S/B 800 
+EI01P.29 BIT 04 = 800 				PASS
+
+EI01B.29 BIT 04 S/B 800 
+EI01B.29 BIT 04 = 800 				PASS
+
+Subroutine WAITGCAL
+Time = 284090.53 Seconds
+-------------------------------------
+
+----------------------------------
+HONEYWELL-CLEARWATER POSITION SET
+
+D01.03/04 (Latitude) = 13d5 876f 
+D01.05/08 (Longitude) = c52c 3ef3 
+
+ED01.03/04 (Latitude) = 13d5 876f 
+ED01.05/08 (Longitude) = c52c 3ef3 
+
+Subroutine PPOSLAB
+Time = 284091.99 Seconds
+----------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.60 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.60 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284094.77 Seconds
+-------------------------------------------------
+
+----------------------------
+Present Position Entered 
+
+D01.02 = 0
+ED01.02 = 0
+
+Subroutine PPOSENT
+Time = 284095.00 Seconds
+----------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.26 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.93 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284099.83 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.59 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.77 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284105.85 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.49 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.91 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284111.87 Seconds
+-------------------------------------------------
+
+--------------------------------
+===== MP 99 (NARF Disable) =====
+
+MP 99 S/B     1
+MP 99 =      1				PASS
+
+---------------------------------
+
+-------------------------------------
+Nav Ready Bit Set
+
+Time In Loop = 211.72 Seconds
+
+I06.01 BIT 15 S/B 1 
+I06.01 BIT 15 = 1				PASS
+
+EI06.01 BIT 15 S/B 1 
+EI06.01 BIT 15 = 1				PASS
+
+Subroutine WAITNAVR
+Time = 284330.03 Seconds
+-------------------------------------
+
+------------------------------------
+Navigate Mode Commanded
+
+D01 FUNCTION SELECT CODE =  4
+ED01 FUNCTION SELECT CODE =  4
+
+Subroutine MODENAV
+Time = 284333.39 Seconds
+------------------------------------
+
+-------------------------------------
+Navigate Mode Entered
+
+Time In Loop = 0.28 Seconds
+
+I01P.29 BIT 08 S/B 80 
+I01P.29 BIT 08 = 80 				PASS
+
+I01B.29 BIT 08 S/B 80 
+I01B.29 BIT 08 = 80 				PASS
+
+EI01P.29 BIT 08 S/B 80 
+EI01P.29 BIT 08 = 80 				PASS
+
+EI01B.29 BIT 08 S/B 80 
+EI01B.29 BIT 08 = 80 				PASS
+
+Subroutine WAITNAV
+Time = 284335.42 Seconds
+-------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 34 
+Reading ED01.03 MP 34 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.04 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.69 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284337.86 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284340.10 Seconds
+-------------------------------------
+
+-----------------------------------
+=====MP 34 (EGI ON/OFF CYCLES)=====
+MP 34 S/B GREATER THAN PREVIOUS MP 34
+MP 34 =      5				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 60 
+Reading ED01.03 MP 60 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.54 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284343.96 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284346.19 Seconds
+-------------------------------------
+
+-----------------------------------
+=====MP 60 (TERMINAL ADDRESS)===== 
+MP 60 S/B     10000
+MP 60 =  10000				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 101 
+Reading ED01.03 MP 101 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.71 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284353.02 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284355.25 Seconds
+-------------------------------------
+
+----------------------------------
+=====MP 101 (PLATFORM PITCH)===== 
+MP 101 S/B 000000 +/- 500. 
+MP 101 = 000271				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 102 
+Reading ED01.03 MP 102 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.99 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.57 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284360.89 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284363.13 Seconds
+-------------------------------------
+
+---------------------------------
+=====MP 102 (PLATFORM ROLL)===== 
+MP 102 S/B 000000 +/- 500. 
+MP 102 = -000033				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 103 
+Reading ED01.03 MP 103 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.44 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.56 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284368.01 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284370.24 Seconds
+-------------------------------------
+
+--------------------------------
+=====MP 103 (TRUE HEADING)===== 
+MP 103 S/B 000000 +/- 500. 
+MP 103 = 000176				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 104 
+Reading ED01.03 MP 104 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.88 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284376.05 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284378.28 Seconds
+-------------------------------------
+
+------------------------------------
+=====MP 104 (MAGNETIC HEADING)===== 
+MP 104 S/B   6151 +/- 500 
+MP 104 = 006201				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 107 
+Reading ED01.03 MP 107 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.25 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.78 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284385.03 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284387.27 Seconds
+-------------------------------------
+
+--------------------------------
+=====MP 107 (GROUND SPEED)===== 
+MP 107 S/B 0 +/- 2 
+MP 107 =      0				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 111 
+Reading ED01.03 MP 111 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.79 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.56 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284391.00 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284393.24 Seconds
+-------------------------------------
+
+--------------------------------
+=====MP 111 (WANDER ANGLE)===== 
+MP 111 S/B 000000 +/- 180000. 
+MP 111 =   0000				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 112 
+Reading ED01.03 MP 112 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.79 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.91 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284398.13 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284400.41 Seconds
+-------------------------------------
+
+-------------------------------------
+=====MP 112 (PRESSURE ALTITUDE)===== 
+MP 112 S/B 800 +/- 4. 
+MP 112 =    800				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 112 
+Reading ED01.03 MP 112 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.59 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284414.99 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284417.27 Seconds
+-------------------------------------
+
+-------------------------------------
+=====MP 112 (PRESSURE ALTITUDE)===== 
+MP 112 S/B 2000 +/- 4. 
+MP 112 =   2000				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 113 
+Reading ED01.03 MP 113 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.91 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.59 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284421.96 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284424.20 Seconds
+-------------------------------------
+
+-----------------------------
+=====MP 113 (REAL TIME)===== 
+MP 113 S/B 0 - 9999.9 
+MP 113 =    6.5				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 113 
+Reading ED01.03 MP 113 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.13 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284449.24 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284451.47 Seconds
+-------------------------------------
+
+-----------------------------
+=====MP 113 (REAL TIME)===== 
+MP 113 S/B GREATER THAN PREVIOUS MP 113 
+MP 113 =    7.0				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 170 
+Reading ED01.03 MP 170 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.79 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.95 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284456.12 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284458.35 Seconds
+-------------------------------------
+
+------------------------------
+=====MP 170 (VELOCITY X)===== 
+MP 170 S/B 00000 +/- 50. 
+MP 170 =      0				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 171 
+Reading ED01.03 MP 171 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.25 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284461.98 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284464.26 Seconds
+-------------------------------------
+
+------------------------------
+=====MP 171 (VELOCITY Y)===== 
+MP 171 S/B 00000 +/- 50. 
+MP 171 = -     0				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 172 
+Reading ED01.03 MP 172 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.67 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.83 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284468.14 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284470.37 Seconds
+-------------------------------------
+
+------------------------------
+=====MP 172 (VELOCITY Z)===== 
+MP 172 S/B 00000 +/- 50. 
+MP 172 = -     0				PASS
+----------------------------------------
+
+================================================ 
+X VELOCITY > 20 NMI/HR (34 ft/sec) Set 
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.05 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.35 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284479.15 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.05 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 1.18 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284491.13 Seconds
+-------------------------------------------------
+
+X VELOCITY
+
+I01B.03 = 33.329125 ft/sec
+
+================================================ 
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 170 
+Reading ED01.03 MP 170 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.25 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284498.07 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284500.30 Seconds
+-------------------------------------
+
+------------------------------
+=====MP 170 (VELOCITY X)===== 
+MP 170 S/B GREATER THAN PREVIOUS MP 170 
+--------------------------------------
+X VELOCITY = 0 NMI/HR (0 ft/sec) 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.61 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.90 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284503.09 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.45 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284507.13 Seconds
+-------------------------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.46 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284511.19 Seconds
+-------------------------------------------------
+
+----------------------------------------
+===== MP 522 (Test Interface Flag) =====
+
+MP 522 S/B     1
+MP 522 =      1				PASS
+
+---------------------------------
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.10 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284518.92 Seconds
+-------------------------------------------------
+
+X VELOCITY
+
+I01B.03 = -0.013508 ft/sec
+EI01B.03 = -0.013805 ft/sec
+
+Subroutine VELXZERO
+Time = 284521.30 Seconds
+--------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 283 
+Reading ED01.03 MP 283 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.15 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284523.18 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284525.41 Seconds
+-------------------------------------
+
+--------------------------------
+=====MP 283 (INAT DISABLE)===== 
+MP 283 S/B     0
+MP 283 =      0				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER WRITE 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.05 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.47 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284532.04 Seconds
+-------------------------------------------------
+
+Subroutine MPWRITE
+Time = 284534.28 Seconds
+-------------------------------------
+
+--------------------------------
+=====MP 283 (INAT DISABLE)===== 
+MP 283 S/B     1
+MP 283 =      1				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER WRITE 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.06 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.65 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284541.06 Seconds
+-------------------------------------------------
+
+Subroutine MPWRITE
+Time = 284543.29 Seconds
+-------------------------------------
+
+--------------------------------
+=====MP 283 (INAT DISABLE)===== 
+MP 283 S/B     0
+MP 283 =      0				PASS
+
+---------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 400 
+Reading ED01.03 MP 400 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.89 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284549.10 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284551.34 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 400 (ETH Network 1 IP MSH)===== 
+MP 400 S/B in range of 0 to 255 and 0 to 255
+MP 400 = 192168				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 401 
+Reading ED01.03 MP 401 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.55 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.69 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284556.91 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284559.14 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 401 (ETH Network 1 IP LSH)===== 
+MP 401 S/B in range of 0 to 255 and 0 to 255
+MP 401 =   1101				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 402 
+Reading ED01.03 MP 402 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.79 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.88 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284564.05 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284566.33 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 402 (ETH Network 1 Netmask MSH)===== 
+MP 402 S/B in range of 0 to 255 and 0 to 255
+MP 402 = 255255				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 403 
+Reading ED01.03 MP 403 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.69 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284572.08 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284574.31 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 403 (ETH Network 1 Netmask LSH)===== 
+MP 403 S/B in range of 0 to 255 and 0 to 255
+MP 403 = 255  0				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 404 
+Reading ED01.03 MP 404 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.37 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.79 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284579.01 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284581.42 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 404 (ETH Network 2 IP MSH)===== 
+MP 404 S/B in range of 0 to 255 and 0 to 255 or DSABLD
+MP 404 = DSABLD				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 405 
+Reading ED01.03 MP 405 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.68 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.55 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284588.93 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284591.16 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 405 (ETH Network 2 IP LSH)===== 
+MP 405 S/B in range of 0 to 255 and 0 to 255 or DSABLD
+MP 405 = DSABLD				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 406 
+Reading ED01.03 MP 406 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.88 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.83 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284599.06 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284601.31 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 406 (ETH Network 2 Netmask MSH)===== 
+MP 406 S/B in range of 0 to 255 and 0 to 255 or DSABLD
+MP 406 = DSABLD				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 407 
+Reading ED01.03 MP 407 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.59 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284608.94 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284611.22 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 407 (ETH Network 2 Netmask LSH)===== 
+MP 407 S/B in range of 0 to 255 and 0 to 255 or DSABLD
+MP 407 = DSABLD				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 408 
+Reading ED01.03 MP 408 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.80 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.94 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284619.11 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284621.34 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 408 (ETH Network 3 IP MSH)===== 
+MP 408 S/B in range of 0 to 255 and 0 to 255 or DSABLD
+MP 408 = 192168				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 409 
+Reading ED01.03 MP 409 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.41 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.91 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284627.15 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284629.39 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 409 (ETH Network 3 IP LSH)===== 
+MP 409 S/B in range of 0 to 255 and 0 to 255 or DSABLD
+MP 409 =   3103				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 410 
+Reading ED01.03 MP 410 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.55 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.81 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284634.04 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284636.27 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 410 (ETH Network 3 Netmask MSH)===== 
+MP 410 S/B in range of 0 to 255 and 0 to 255 or DSABLD
+MP 410 = 255255				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 411 
+Reading ED01.03 MP 411 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.69 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.81 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284642.20 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284644.43 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 411 (ETH Network 3 Netmask LSH)===== 
+MP 411 S/B in range of 0 to 255 and 0 to 255 or DSABLD
+MP 411 = 255  0				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 412 
+Reading ED01.03 MP 412 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.27 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.70 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284648.97 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284651.21 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 412 (ETH Network 4 IP MSH)===== 
+MP 412 S/B in range of 0 to 255 and 0 to 255 or DSABLD
+MP 412 = DSABLD				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 413 
+Reading ED01.03 MP 413 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.89 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.61 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284658.89 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284661.38 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 413 (ETH Network 4 IP LSH)===== 
+MP 413 S/B in range of 0 to 255 and 0 to 255 or DSABLD
+MP 413 = DSABLD				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 414 
+Reading ED01.03 MP 414 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.52 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284669.07 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284671.35 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 414 (ETH Network 4 Netmask MSH)===== 
+MP 414 S/B in range of 0 to 255 and 0 to 255 or DSABLD
+MP 414 = DSABLD				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 415 
+Reading ED01.03 MP 415 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.79 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.81 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284679.15 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284681.38 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 415 (ETH Network 4 Netmask LSH)===== 
+MP 415 S/B in range of 0 to 255 and 0 to 255 or DSABLD
+MP 415 = DSABLD				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 530 
+Reading ED01.03 MP 530 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.57 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284689.03 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284691.31 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 530 (ARINC RX Chanels)===== 
+MP 530 S/B 0 or 1
+MP 530 =      0				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 531 
+Reading ED01.03 MP 531 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.57 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284695.19 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284697.42 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 531 (ARINC RX Chanel 1 Label 271)===== 
+MP 531 S/B 0 or 9 or blank 
+MP 531 =       				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 532 
+Reading ED01.03 MP 532 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.71 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.91 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284701.33 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284703.56 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 532 (ARINC RX Chanel 2 Label 271)===== 
+MP 532 S/B 0 or 9 or blank 
+MP 532 =       				FAIL
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 540 
+Reading ED01.03 MP 540 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.71 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284707.20 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284709.44 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 540 (DISCRETES)===== 
+MP 540 S/B 0000 to FFFF
+MP 540 =   030F				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 550 
+Reading ED01.03 MP 550 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 1.26 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.80 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284715.19 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284717.42 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 550 (RS422 Wraparound)===== 
+MP 550 S/B 000 to 111 (binary format) 
+MP 550 =    000				PASS
+----------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 551 
+Reading ED01.03 MP 551 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.99 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.81 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284722.12 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284724.36 Seconds
+-------------------------------------
+
+---------------------------------------------------------
+=====MP 551 (RS422 Wraparound Results)===== 
+MP 551 S/B NOWRAP 
+MP 551 = NOWRAP				PASS
+----------------------------------------
+
+++++++++ CLEAR FLIGHT DATA +++++++++
+-------------------------------------
+MISCELLANEOUS PARAMETER READ
+
+Reading D01.03 MP 294 
+Reading ED01.03 MP 294 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.81 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284734.21 Seconds
+-------------------------------------------------
+
+Subroutine MPREAD
+Time = 284736.44 Seconds
+-------------------------------------
+
+-------------------------------------
+MISCELLANEOUS PARAMETER WRITE 
+
+-------------------------------------------------
+Data Ready Acknowledge Set in 0.05 Seconds
+I06.22 BIT 04 = 1
+EI06.22 BIT 04 = 1
+
+Data Ready Acknowledge Reset in 0.89 Seconds
+I06.22 BIT 04 = 0
+EI06.22 BIT 04 = 0
+
+Subroutine DRA
+Time = 284740.11 Seconds
+-------------------------------------------------
+
+Subroutine MPWRITE
+Time = 284742.34 Seconds
+-------------------------------------
+
+++++++++++++++++++++++++++++++++++++++
+
+-------------------------------------
+LATCHED BITS
+
+MI14.09 = 0
+EI14.09 = 0
+MI14.10 = 0
+EI14.10 = 0
+MI14.11 = 0
+EI14.11 = 0
+MI14.12 = 0
+EI14.12 = 0
+MI14.13 = 0
+EI14.13 = 0
+MI14.14 = 0
+EI14.14 = 0
+MI14.15 = 0
+EI14.15 = 0
+MI14.16 = 0
+EI14.16 = 0
+MI14.17 = 0
+EI14.17 = 0
+MI14.18 = 0
+EI14.18 = 0
+MI14.19 = 0
+EI14.19 = 0
+MI14.20 = 400
+EI14.20 = 400
+LBIT ID 182: Kalman Filter Gyro Bias Warning
+
+Subroutine LBITCHK
+Time = 284748.85 Seconds
+-------------------------------------
+
+-----------------------------
+PRIMARY POWER REMOVED
+
+Power Off Time =  1.48 sec
+
+Subroutine PWRDOWN
+Time = 284751.68 Seconds
+-----------------------------
+
+--------------------------------
+STD: Thu Jan 15 17:35:57 2026 
+GMT: Thu Jan 15 22:35:57 2026
+
+Subroutine PRTTIME
+--------------------------------
+
+-------------------------------------
+Hardware Lab Flag Enabled
+
+Hardware BOOT Disabled
+
+Software Lab Flag Enabled
+VEN1.01 = 8800
+EVEN1.01 = 8800
+
+Word Count
+VEN1.04 = 20
+EVEN1.04 = 20
+
+Input Message Control = MIL-STD-1553B
+Input Message Control Register R255 = 2
+I-25.01 = 100
+I-25.02 = 0
+I-25.03 = 0
+I-25.04 = 0
+I-25.05 = 0
+I-25.06 = 0
+I-25.07 = 0
+I-25.08 = 0
+I-25.09 = 0
+I-25.10 = 0
+I-25.11 = 0
+I-25.12 = 0
+I-25.13 = 0
+I-25.14 = 0
+I-25.15 = 0
+I-25.16 = 0
+
+Hardware Configuration - SFF, Register R254 = 2
+
+C01.01 (Mode Word) = 8000
+EC01.01 (Mode Word) = 8000
+
+C01.02 (Pressure Altitude) = 80.00 Feet
+EC01.02 (Pressure Altitude) = 80.00 Feet
+
+C01.04 (True Airspeed) = 0.00 Knots
+EC01.04 (True Airspeed) = 0.00 Knots
+
+I-1.02 BITS 08-15 (Datum) = 47
+EI-1.02 BITS 08-15 (Datum)= 47
+
+I-1.02 BITS 02/03 (Phase Of Flight) =  0
+EI-1.02 BITS 02/03 (Phase Of Flight) =  0
+
+I-1.07 BIT's 13/14 (Approach Subtype) =  0
+EI-1.07 BIT's 13/14 (Approach Subtype) =  0
+
+I-1.06 BITS 07-15 (Mask Angle) = 5.0 Deg
+EI-1.06 BITS 07-15 (Mask Angle) = 5.0 Deg
+
+I-1.03 BITS 11-13 (SBAS Aug Type) = 0 
+EI-1.03 BITS 11-13 (SBAS Aug Type) = 0 
+
+I-1.05 BIT 7 (SBAS Data) = 0 
+EI-1.05 BIT 7 (SBAS Data) = 0 
+
+I-1.01 BITS 01/02 (RECEIVER MODE SELECT) = 2 
+EI-1.01 BITS 01/02 (RECEIVER MODE SELECT) = 2 
+
+I-2.01 (Init Word) = f800
+EI-2.01 (Init Word) = f800
+
+I-2.07/08 (Entered Latitude) = 27.89170 Deg
+EI-2.07/08 (Entered Latitude) = 27.89170 Deg
+
+I-2.09/10 (Entered Longitude) = -82.72570 Deg
+EI-2.09/10 (Entered Longitude) = -82.72570 Deg
+
+I-2.11 (Entered Altitude) = 80.00 Feet
+EI-2.11 (Entered Altitude) = 80.00 Feet
+
+I-2.02 (Entered Year) = 2026
+I-2.03 (Entered Month) =  1
+I-2.04 (Entered Day) =  15
+
+D01.01 = 1f
+D01.02 = 0
+D01.03 = 0
+D01.04 = 0
+ED01.01 = 1f
+ED01.02 = 0
+ED01.03 = 0
+ED01.04 = 0
+
+Subroutine NORMSETUP
+Time = 284791.14 Seconds
+-------------------------------------
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|			Test Case: A0807XMP 			      |
+|			Program: GA SPS FQT  		      |
+|			OFP FQT      			      |
+|			END OF test			      |
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+-------------------------
+R,S,F,L REGISTERS CLEARED
+
+Subroutine REGCLR
+Time = 284803.43 Seconds
+-------------------------
+
+
