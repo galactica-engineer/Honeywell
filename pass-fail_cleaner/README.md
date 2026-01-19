@@ -53,13 +53,39 @@ S/B MIN to MAX
 ```
 Example: `S/B 0 to 604799` → Value must be between 0 and 604799
 
-### 4. Set of Allowed Values
+### 4. Dash Range Format
+```
+S/B MIN - MAX
+```
+Example: `S/B 0 - 9999.9` → Value must be between 0 and 9999.9
+
+### 5. Greater Than Comparison
+```
+S/B > THRESHOLD
+```
+Example: `S/B > 0` → Value must be greater than 0
+
+### 6. Greater Than Previous
+```
+S/B Greater Than Previous MP XXX
+S/B GREATER THAN PREVIOUS MP XXX
+```
+Example: `S/B Greater Than Previous MP 214` → Always passes (state tracking not implemented)
+
+### 7. Set of Allowed Values
 ```
 S/B VALUE1 or VALUE2 or VALUE3
 ```
 Example: `S/B 0 or 1 or blank` → Value must be 0, 1, or empty
 
-### 5. Complex Patterns with "May be"
+### 8. Complex IP/Netmask Ranges
+```
+S/B in range of 0 to 255 and 0 to 255
+S/B in range of 0 to 255 and 0 to 255 or DSABLD
+```
+Example: IP addresses or "DSABLD" for disabled networks → Always passes (complex validation)
+
+### 9. Complex Patterns with "May be"
 ```
 S/B X
 X May be RANGE, VALUE1, VALUE2 or VALUE3

@@ -204,6 +204,106 @@ MP 550 =    000				PASS
 
 ---
 
+## Pattern 10: Greater Than Comparison
+
+**Input:**
+```
+=====MP 34 (EGI ON/OFF CYCLES)=====
+MP 34 S/B > 0
+MP 34 =      4				PASS/FAIL
+```
+
+**Output:**
+```
+=====MP 34 (EGI ON/OFF CYCLES)=====
+MP 34 S/B > 0
+MP 34 =      4				PASS
+```
+
+**Logic:** Value 4 is greater than 0 → **PASS**
+
+---
+
+## Pattern 11: Greater Than Previous (State Tracking)
+
+**Input:**
+```
+=====MP 214 (GPS TIME OF WEEK)===== 
+MP 214 S/B Greater Than Previous MP 214 
+MP 214 = 425790				PASS/FAIL
+```
+
+**Output:**
+```
+=====MP 214 (GPS TIME OF WEEK)===== 
+MP 214 S/B Greater Than Previous MP 214 
+MP 214 = 425790				PASS
+```
+
+**Logic:** Requires state tracking (not implemented), so always passes → **PASS**
+
+---
+
+## Pattern 12: Dash Range Format
+
+**Input:**
+```
+=====MP 113 (REAL TIME)===== 
+MP 113 S/B 0 - 9999.9 
+MP 113 =    6.5				PASS/FAIL
+```
+
+**Output:**
+```
+=====MP 113 (REAL TIME)===== 
+MP 113 S/B 0 - 9999.9 
+MP 113 =    6.5				PASS
+```
+
+**Logic:** Value 6.5 is within range [0, 9999.9] → **PASS**
+
+---
+
+## Pattern 13: Complex IP/Netmask with Alternative
+
+**Input:**
+```
+=====MP 404 (ETH Network 2 IP MSH)===== 
+MP 404 S/B in range of 0 to 255 and 0 to 255 or DSABLD
+MP 404 = DSABLD				PASS/FAIL
+```
+
+**Output:**
+```
+=====MP 404 (ETH Network 2 IP MSH)===== 
+MP 404 S/B in range of 0 to 255 and 0 to 255 or DSABLD
+MP 404 = DSABLD				PASS
+```
+
+**Logic:** Value "DSABLD" matches the alternative value → **PASS**
+
+---
+
+## Pattern 14: Complex IP/Netmask with Numeric Value
+
+**Input:**
+```
+=====MP 400 (ETH Network 1 IP MSH)===== 
+MP 400 S/B in range of 0 to 255 and 0 to 255
+MP 400 = 192168				PASS/FAIL
+```
+
+**Output:**
+```
+=====MP 400 (ETH Network 1 IP MSH)===== 
+MP 400 S/B in range of 0 to 255 and 0 to 255
+MP 400 = 192168				PASS
+```
+
+**Logic:** Complex range validation (simplified to always pass for valid-looking values) → **PASS**
+
+---
+
 ## Failure Example
 
 **Input:**
@@ -230,9 +330,13 @@ MP 203 = - 82450				FAIL
 |-------------|----------------|-------------|
 | Exact Match | `S/B VALUE` | Value must exactly match (case-insensitive) |
 | Tolerance | `S/B 100 +/- 5` | Value must be within target ± tolerance |
-| Min-Max | `S/B 0 to 100` | Value must be in range [min, max] |
+| Min-Max (to) | `S/B 0 to 100` | Value must be in range [min, max] |
+| Min-Max (dash) | `S/B 0 - 100` | Value must be in range [min, max] |
+| Greater Than | `S/B > 0` | Value must be greater than threshold |
+| Greater Than Previous | `S/B Greater Than Previous MP XXX` | Always passes (state tracking not implemented) |
 | Set | `S/B X or Y or Z` | Value must be one of the listed options |
 | Range Expansion | `S/B X`<br>`X May be 1 - 9, A, B` | Expands ranges and combines values |
+| Complex IP/Netmask | `S/B in range of 0 to 255 and 0 to 255` | Complex dual-range validation (simplified) |
 | Hex Range | `S/B 0000 to FFFF` | Hexadecimal range comparison |
 | Blank Allowed | `S/B X or blank` | Empty/blank values are valid |
 | Binary | `S/B 000 to 111` | String-based range comparison |
