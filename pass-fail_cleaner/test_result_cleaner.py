@@ -19,6 +19,7 @@ class TestResultProcessor:
     def __init__(self):
         self.criteria_pattern = re.compile(r'S/B\s+(.+?)(?:\s*\n|$)', re.IGNORECASE)
         self.pass_fail_pattern = re.compile(r'^(.+?)\s+(PASS/FAIL)\s*$')
+        self.previous_values = {}  # Track previous values for "greater than previous" comparisons
         
     def extract_value(self, line: str) -> Optional[str]:
         """Extract the measured value from a line."""
@@ -32,6 +33,14 @@ class TestResultProcessor:
         if match:
             value = match.group(1).strip()
             return value
+        return None
+    
+    def extract_param_name(self, line: str) -> Optional[str]:
+        """Extract the parameter name from a line (e.g., 'MP 214' from 'MP 214 = 425790')."""
+        # Match pattern like "MP 214" or "I-1.02" before the =
+        match = re.match(r'^(.+?)\s*=', line)
+        if match:
+            return match.group(1).strip()
         return None
     
     def parse_criteria(self, criteria_text: str) -> dict:
@@ -67,9 +76,14 @@ class TestResultProcessor:
             if len(parts) == 2:
                 return {'type': 'range', 'min': parts[0].strip(), 'max': parts[1].strip()}
         
-        # Handle "greater than previous" - mark as always pass (requires state tracking)
+        # Handle "greater than previous" - extract which parameter to compare
         if 'greater than previous' in criteria.lower():
-            return {'type': 'always_pass'}
+            # Extract the parameter name (e.g., "MP 214" from "Greater Than Previous MP 214")
+            match = re.search(r'greater than previous\s+(.*)', criteria, re.IGNORECASE)
+            if match:
+                param_name = match.group(1).strip()
+                return {'type': 'greater_than_previous', 'param': param_name}
+            return {'type': 'unvalidatable'}
         
         # Handle ">" (greater than) operator
         if criteria.strip().startswith('>'):
@@ -165,12 +179,29 @@ class TestResultProcessor:
             if criteria['type'] == 'set' and any(v.lower() == 'blank' for v in criteria['values']):
                 return True
             # Empty values fail for other criteria types
-            if criteria['type'] != 'always_pass':
+            if criteria['type'] != 'unvalidatable':
                 return False
         
-        # Handle "always pass" type (for patterns we can't fully validate)
-        if criteria['type'] == 'always_pass':
-            return True
+        # Handle patterns we can't validate - return None to leave unchanged
+        if criteria['type'] == 'unvalidatable':
+            return None
+        
+        # Handle "greater_than_previous" type
+        if criteria['type'] == 'greater_than_previous':
+            param_name = criteria['param']
+            
+            # Check if we have a previous value
+            if param_name not in self.previous_values:
+                # No previous value - this is the first occurrence, so it passes
+                return True
+            
+            try:
+                current_val = float(value.replace(' ', '').strip())
+                previous_val = self.previous_values[param_name]
+                return current_val > previous_val
+            except (ValueError, TypeError):
+                # If we can't convert to numbers, can't compare
+                return None
         
         # Handle "complex_range" type (for IP addresses, etc.)
         if criteria['type'] == 'complex_range':
@@ -290,17 +321,34 @@ class TestResultProcessor:
                     
                     if value is not None:
                         passed = self.check_value_against_criteria(value, criteria)
-                        result = "PASS" if passed else "FAIL"
                         
-                        if passed:
-                            stats['passed'] += 1
+                        # If None is returned, we can't validate - leave unchanged
+                        if passed is None:
+                            processed_lines.append(line)
+                            stats['unchanged'] += 1
                         else:
-                            stats['failed'] += 1
+                            result = "PASS" if passed else "FAIL"
+                            
+                            if passed:
+                                stats['passed'] += 1
+                            else:
+                                stats['failed'] += 1
+                            
+                            # Reconstruct the line with the result
+                            # Preserve the original whitespace/tab structure
+                            processed_line = line.replace('PASS/FAIL', result)
+                            processed_lines.append(processed_line)
                         
-                        # Reconstruct the line with the result
-                        # Preserve the original whitespace/tab structure
-                        processed_line = line.replace('PASS/FAIL', result)
-                        processed_lines.append(processed_line)
+                        # Store this value for future "greater than previous" comparisons
+                        param_name = self.extract_param_name(line)
+                        if param_name and value:
+                            try:
+                                # Try to store as float for numeric comparisons
+                                numeric_value = float(value.replace(' ', '').strip())
+                                self.previous_values[param_name] = numeric_value
+                            except ValueError:
+                                # If not numeric, store as string
+                                self.previous_values[param_name] = value
                     else:
                         # Could not extract value, leave as PASS/FAIL
                         processed_lines.append(line)

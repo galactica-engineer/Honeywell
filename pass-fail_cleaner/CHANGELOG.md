@@ -49,7 +49,12 @@ Version 2 of the Test Result Cleaner addresses all the false failures identified
 - MP 34: `S/B GREATER THAN PREVIOUS MP 34` → Was incorrectly marked FAIL
 - MP 113: `S/B GREATER THAN PREVIOUS MP 113` → Was incorrectly marked FAIL
 
-**Fix:** Added pattern recognition for "Greater Than Previous" that marks as always pass (since proper implementation would require maintaining state across the file)
+**Fix:** Implemented proper state tracking with a `previous_values` dictionary that:
+1. Stores each parameter's value as it's processed
+2. Extracts the parameter name from "Greater Than Previous MP XXX" criteria
+3. Compares current value against stored previous value
+4. Returns True for first occurrence (no previous value)
+5. Returns True/False based on current > previous for subsequent occurrences
 
 ---
 
@@ -118,9 +123,16 @@ Version 2 adds support for these additional pattern types:
 
 ## Technical Improvements
 
+### State Tracking
+- Added `previous_values` dictionary to store parameter values
+- Automatically extracts parameter names (e.g., "MP 214") from lines
+- Stores numeric values as floats for accurate comparison
+- Maintains state throughout file processing
+
 ### Value Extraction
 - Changed from `=\s*([^\t]+)` to `=\s*(.*)$` with PASS/FAIL removal
 - Now correctly handles empty values and preserves spacing
+- Added `extract_param_name()` method to identify parameters
 
 ### Empty Value Handling
 - Improved detection: `not value or value.strip() == ''`
@@ -131,9 +143,10 @@ Version 2 adds support for these additional pattern types:
 - Prevents misclassification of complex criteria
 
 ### New Criteria Types
-- `always_pass`: For patterns requiring state tracking
+- `greater_than_previous`: Compares against stored previous value
 - `complex_range`: For IP/netmask validation with alternatives
 - `greater_than`: For threshold comparisons
+- `unvalidatable`: For patterns that truly can't be validated
 
 ---
 

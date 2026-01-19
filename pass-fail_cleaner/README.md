@@ -70,7 +70,13 @@ Example: `S/B > 0` → Value must be greater than 0
 S/B Greater Than Previous MP XXX
 S/B GREATER THAN PREVIOUS MP XXX
 ```
-Example: `S/B Greater Than Previous MP 214` → Always passes (state tracking not implemented)
+Example: `S/B Greater Than Previous MP 214` → Value must be greater than the previous occurrence of MP 214 in the file
+
+**How it works:** The script maintains a dictionary of parameter names and their most recent values. When it encounters a "Greater Than Previous" criteria, it:
+1. Looks up the previous value for that parameter
+2. Compares current value > previous value
+3. Stores the current value for future comparisons
+4. First occurrence always passes (no previous value to compare)
 
 ### 7. Set of Allowed Values
 ```

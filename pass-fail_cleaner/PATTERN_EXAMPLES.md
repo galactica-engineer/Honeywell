@@ -229,6 +229,10 @@ MP 34 =      4				PASS
 **Input:**
 ```
 =====MP 214 (GPS TIME OF WEEK)===== 
+MP 214 S/B 0 to 604799. 
+MP 214 = 425765				PASS/FAIL
+
+=====MP 214 (GPS TIME OF WEEK)===== 
 MP 214 S/B Greater Than Previous MP 214 
 MP 214 = 425790				PASS/FAIL
 ```
@@ -236,11 +240,20 @@ MP 214 = 425790				PASS/FAIL
 **Output:**
 ```
 =====MP 214 (GPS TIME OF WEEK)===== 
+MP 214 S/B 0 to 604799. 
+MP 214 = 425765				PASS
+
+=====MP 214 (GPS TIME OF WEEK)===== 
 MP 214 S/B Greater Than Previous MP 214 
 MP 214 = 425790				PASS
 ```
 
-**Logic:** Requires state tracking (not implemented), so always passes → **PASS**
+**Logic:** 
+1. First MP 214 = 425765 → Passes range check → Value stored
+2. Second MP 214 = 425790 → Compare: 425790 > 425765? Yes → **PASS**
+
+**Failure Example:**
+If the second value was 425760 (less than 425765), it would be marked as **FAIL**
 
 ---
 
@@ -333,7 +346,7 @@ MP 203 = - 82450				FAIL
 | Min-Max (to) | `S/B 0 to 100` | Value must be in range [min, max] |
 | Min-Max (dash) | `S/B 0 - 100` | Value must be in range [min, max] |
 | Greater Than | `S/B > 0` | Value must be greater than threshold |
-| Greater Than Previous | `S/B Greater Than Previous MP XXX` | Always passes (state tracking not implemented) |
+| Greater Than Previous | `S/B Greater Than Previous MP XXX` | Value must be greater than previous occurrence (with state tracking) |
 | Set | `S/B X or Y or Z` | Value must be one of the listed options |
 | Range Expansion | `S/B X`<br>`X May be 1 - 9, A, B` | Expands ranges and combines values |
 | Complex IP/Netmask | `S/B in range of 0 to 255 and 0 to 255` | Complex dual-range validation (simplified) |
