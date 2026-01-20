@@ -28,6 +28,8 @@ class TestResultProcessor:
         self.criteria_pattern = re.compile(r'S/B\s+(.+?)(?:\s*\n|$)', re.IGNORECASE)
         self.pass_fail_pattern = re.compile(r'^(.+?)\s+(PASS/FAIL)\s*$')
         self.previous_values = {}  # Track previous values for "greater than previous" comparisons
+        self.file_lines = []  # Store file lines for cross-reference lookups
+        self.current_line_idx = 0  # Track current line being processed
         
     def extract_value(self, line: str) -> Optional[str]:
         """Extract the measured value from a line."""
@@ -49,6 +51,32 @@ class TestResultProcessor:
         match = re.match(r'^(.+?)\s*=', line)
         if match:
             return match.group(1).strip()
+        return None
+    
+    def find_reference_value(self, reference_name: str, lines: List[str], current_line_idx: int) -> Optional[str]:
+        """
+        Find the value of a reference parameter in the file.
+        
+        Searches backwards from current line for pattern: REFERENCE_NAME = VALUE
+        
+        Args:
+            reference_name: The reference to look for (e.g., "VEN2.01/02")
+            lines: All lines from the file
+            current_line_idx: Index of current PASS/FAIL line
+            
+        Returns:
+            The reference value, or None if not found
+        """
+        # Search backwards from current position
+        for i in range(current_line_idx - 1, -1, -1):
+            line = lines[i].strip()
+            # Look for pattern: REFERENCE_NAME = VALUE
+            # Use regex to handle various spacing
+            pattern = re.escape(reference_name) + r'\s*=\s*(.+?)(?:\s|$)'
+            match = re.search(pattern, line, re.IGNORECASE)
+            if match:
+                value = match.group(1).strip()
+                return value
         return None
     
     def has_pass_fail_conditions(self, file_path: str) -> bool:
@@ -80,6 +108,20 @@ class TestResultProcessor:
         - 'values': relevant values for comparison
         """
         criteria = criteria_text.strip()
+        
+        # Handle cross-reference pattern: "S/B = REFERENCE" (e.g., "= VEN2.01/02" or "= 30000")
+        # This means the value should match either:
+        # - The value stored in REFERENCE elsewhere in the file (if REFERENCE is a parameter name)
+        # - The literal value REFERENCE (if REFERENCE is just a number)
+        if criteria.startswith('='):
+            reference = criteria[1:].strip()
+            # Check if it's a parameter reference (contains letters/dots/slashes) or a direct value (just digits)
+            if re.search(r'[A-Za-z]', reference) or '/' in reference or '.' in reference:
+                # It's a cross-reference to another parameter
+                return {'type': 'cross_reference', 'reference': reference}
+            else:
+                # It's a direct value comparison (numeric)
+                return {'type': 'exact', 'value': reference}
         
         # Handle "in range of X to Y and X to Y" or similar complex patterns (check this FIRST)
         if 'in range of' in criteria.lower():
@@ -213,6 +255,32 @@ class TestResultProcessor:
         # Handle patterns we can't validate - return None to leave unchanged
         if criteria['type'] == 'unvalidatable':
             return None
+        
+        # Handle "cross_reference" type (e.g., S/B = VEN2.01/02)
+        if criteria['type'] == 'cross_reference':
+            reference_name = criteria['reference']
+            # Find the reference value in the file
+            reference_value = self.find_reference_value(reference_name, self.file_lines, self.current_line_idx)
+            
+            if reference_value is None:
+                # Can't find reference, can't validate
+                return None
+            
+            # Normalize both values for comparison
+            # Remove spaces, colons, and convert to lowercase for case-insensitive comparison
+            value_normalized = value.replace(' ', '').replace(':', '').lower()
+            ref_normalized = reference_value.replace(' ', '').replace(':', '').lower()
+            
+            # Also try comparing as hex numbers (strip leading zeros)
+            # This handles cases like "00629" vs "629" or "001D" vs "1d"
+            try:
+                # Try to convert both as hex numbers
+                value_hex = int(value_normalized, 16)
+                ref_hex = int(ref_normalized, 16)
+                return value_hex == ref_hex
+            except ValueError:
+                # Not valid hex, fall back to string comparison
+                return value_normalized == ref_normalized
         
         # Handle "greater_than_previous" type
         if criteria['type'] == 'greater_than_previous':
@@ -352,12 +420,18 @@ class TestResultProcessor:
         with open(input_file, 'r', encoding='utf-8', errors='replace') as f:
             lines = f.readlines()
         
+        # Store lines for cross-reference lookups
+        self.file_lines = lines
+        
         stats = {'total': 0, 'passed': 0, 'failed': 0, 'unchanged': 0}
         processed_lines = []
         
         i = 0
         while i < len(lines):
             line = lines[i]
+            
+            # Update current line index for cross-reference lookups
+            self.current_line_idx = i
             
             # Check if this line ends with PASS/FAIL
             match = self.pass_fail_pattern.match(line.rstrip())
@@ -367,29 +441,64 @@ class TestResultProcessor:
                 # Extract the line content without PASS/FAIL
                 line_content = match.group(1)
                 
-                # Look backwards for the criteria line (S/B)
+                # Look for the criteria line (S/B)
+                # First check if the PASS/FAIL line itself contains S/B (e.g., "MP 285 S/B = VEN2.01/02 PASS/FAIL")
                 criteria_text = None
                 criteria_line_idx = None
-                for j in range(i - 1, max(i - 10, -1), -1):
-                    criteria_match = self.criteria_pattern.search(lines[j])
-                    if criteria_match:
-                        criteria_text = criteria_match.group(1).strip()
-                        criteria_line_idx = j
-                        
-                        # Check if the criteria is just a placeholder (like "X" or "XX")
-                        # and there's more explanation in the next line
-                        if criteria_line_idx + 1 < len(lines):
-                            next_line = lines[criteria_line_idx + 1].strip()
-                            # Look for "May be" or other explanatory patterns
-                            if 'may be' in next_line.lower() or (criteria_text in ['X', 'XX', 'XXX'] and next_line):
-                                # Append the next line to criteria
-                                criteria_text = criteria_text + ' ' + next_line
-                        break
+                
+                # For lines with S/B on the PASS/FAIL line itself, extract from line_content (which has PASS/FAIL removed)
+                criteria_match = self.criteria_pattern.search(line_content)
+                if criteria_match:
+                    # Criteria is on the PASS/FAIL line itself (after removing PASS/FAIL)
+                    criteria_text = criteria_match.group(1).strip()
+                    criteria_line_idx = i
+                else:
+                    # Look backwards for the criteria line
+                    for j in range(i - 1, max(i - 10, -1), -1):
+                        criteria_match = self.criteria_pattern.search(lines[j])
+                        if criteria_match:
+                            criteria_text = criteria_match.group(1).strip()
+                            criteria_line_idx = j
+                            
+                            # Check if the criteria is just a placeholder (like "X" or "XX")
+                            # and there's more explanation in the next line
+                            if criteria_line_idx + 1 < len(lines):
+                                next_line = lines[criteria_line_idx + 1].strip()
+                                # Look for "May be" or other explanatory patterns
+                                if 'may be' in next_line.lower() or (criteria_text in ['X', 'XX', 'XXX'] and next_line):
+                                    # Append the next line to criteria
+                                    criteria_text = criteria_text + ' ' + next_line
+                            break
                 
                 # Determine pass/fail
                 if criteria_text:
-                    value = self.extract_value(line)
                     criteria = self.parse_criteria(criteria_text)
+                    
+                    # For cross_reference type, we need to find the actual measured value
+                    # The PASS/FAIL line format is: "PARAM S/B = REFERENCE"
+                    # We need to find the line with: "PARAM = VALUE" or "PARAM: VALUE"
+                    if criteria['type'] == 'cross_reference':
+                        # Extract parameter name from the PASS/FAIL line
+                        # Line format: "MP 285 S/B = VEN2.01/02 PASS/FAIL"
+                        param_match = re.match(r'^(.+?)\s+S/B\s*=', line_content)
+                        if param_match:
+                            param_name = param_match.group(1).strip()
+                            
+                            # Look backwards for the value line: "PARAM = VALUE" or "PARAM: VALUE"
+                            value = None
+                            for j in range(i - 1, max(i - 20, -1), -1):
+                                # Look for lines with this param and = or : but not S/B
+                                if param_name in lines[j] and ('=' in lines[j] or ':' in lines[j]) and 'S/B' not in lines[j]:
+                                    # Extract the value (after = or :)
+                                    val_match = re.search(r'[=:]\s*(.*)$', lines[j].strip())
+                                    if val_match:
+                                        value = val_match.group(1).strip()
+                                        break
+                        else:
+                            value = None
+                    else:
+                        # For other criteria types, extract value from the PASS/FAIL line itself
+                        value = self.extract_value(line)
                     
                     if value is not None:
                         passed = self.check_value_against_criteria(value, criteria)
