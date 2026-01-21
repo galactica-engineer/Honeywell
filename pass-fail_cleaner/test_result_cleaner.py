@@ -91,7 +91,7 @@ class TestResultProcessor:
             True if file contains PASS/FAIL, False otherwise
         """
         try:
-            with open(file_path, 'r', encoding='utf-8', errors='replace') as f:
+            with open(file_path, 'r', encoding='windows-1252') as f:
                 for line in f:
                     if self.pass_fail_pattern.match(line.rstrip()):
                         return True
@@ -440,7 +440,9 @@ class TestResultProcessor:
             raise FileNotFoundError(f"Input file not found: {input_path}")
         
         # Read all lines
-        with open(input_file, 'r', encoding='utf-8', errors='replace') as f:
+        # Use latin-1 encoding which maps bytes 0-255 directly to Unicode code points
+        # This preserves all characters including Windows-1252 special chars (en-dash, etc.)
+        with open(input_file, 'r', encoding='windows-1252') as f:
             lines = f.readlines()
         
         # Store lines for cross-reference lookups
@@ -569,7 +571,8 @@ class TestResultProcessor:
             i += 1
         
         # Write output file
-        with open(output_file, 'w', encoding='utf-8') as f:
+        # Use latin-1 encoding to preserve special characters from input
+        with open(output_file, 'w', encoding='windows-1252') as f:
             f.writelines(processed_lines)
         
         return stats
