@@ -26,7 +26,8 @@ class TestResultProcessor:
     
     def __init__(self):
         self.criteria_pattern = re.compile(r'S/B\s+(.+?)(?:\s*\n|$)', re.IGNORECASE)
-        self.pass_fail_pattern = re.compile(r'^(.+?)\s+(PASS/FAIL)\s*$')
+        # Match PASS/FAIL with optional trailing asterisks or other characters
+        self.pass_fail_pattern = re.compile(r'^(.+?)\s+(PASS/FAIL)[\*\s]*$')
         self.previous_values = {}  # Track previous values for "greater than previous" comparisons
         self.file_lines = []  # Store file lines for cross-reference lookups
         self.current_line_idx = 0  # Track current line being processed
@@ -34,9 +35,9 @@ class TestResultProcessor:
     def extract_value(self, line: str) -> Optional[str]:
         """Extract the measured value from a line."""
         # Look for pattern like "MP XXX = VALUE" followed by PASS/FAIL
-        # Need to exclude the PASS/FAIL part
+        # Need to exclude the PASS/FAIL part (with optional trailing asterisks or other chars)
         # First, remove the PASS/FAIL portion
-        line_without_result = re.sub(r'\s+PASS/FAIL\s*$', '', line)
+        line_without_result = re.sub(r'\s+PASS/FAIL[\*\s]*$', '', line)
         
         # Now extract the value after = (use .* to allow empty values)
         match = re.search(r'=\s*(.*)$', line_without_result)
@@ -230,6 +231,24 @@ class TestResultProcessor:
         # Handle exact match
         return {'type': 'exact', 'value': criteria}
     
+    def extract_numeric_value(self, value_str: str) -> Optional[float]:
+        """
+        Extract numeric value from a string that may contain units.
+        Examples: "136.974944 Deg" -> 136.974944, "-22.5" -> -22.5
+        """
+        # Remove common units and extra spaces
+        cleaned = value_str.replace(' ', '').strip()
+        
+        # Try to extract just the numeric part
+        # Match optional sign, digits, optional decimal point and more digits
+        match = re.match(r'([+-]?\d+(?:\.\d+)?)', cleaned)
+        if match:
+            try:
+                return float(match.group(1))
+            except ValueError:
+                return None
+        return None
+    
     def check_value_against_criteria(self, value: str, criteria: dict) -> bool:
         """
         Check if a value meets the criteria.
@@ -291,12 +310,16 @@ class TestResultProcessor:
                 # No previous value - this is the first occurrence, so it passes
                 return True
             
+            current_val = self.extract_numeric_value(value)
+            if current_val is None:
+                # Can't extract numeric value
+                return None
+            
             try:
-                current_val = float(value.replace(' ', '').strip())
                 previous_val = self.previous_values[param_name]
                 return current_val > previous_val
-            except (ValueError, TypeError):
-                # If we can't convert to numbers, can't compare
+            except (TypeError, KeyError):
+                # If we can't compare, can't validate
                 return None
         
         # Handle "complex_range" type (for IP addresses, netmasks)
@@ -356,11 +379,10 @@ class TestResultProcessor:
         
         # Handle "greater_than" type
         if criteria['type'] == 'greater_than':
-            try:
-                val = float(value.replace(' ', '').strip())
-                return val > criteria['threshold']
-            except ValueError:
+            val = self.extract_numeric_value(value)
+            if val is None:
                 return False
+            return val > criteria['threshold']
         
         if criteria['type'] == 'exact':
             return value.upper() == criteria['value'].upper()
@@ -389,13 +411,14 @@ class TestResultProcessor:
                     return criteria['min'] <= value <= criteria['max']
         
         elif criteria['type'] == 'tolerance':
-            try:
-                val = float(value.replace(' ', '').replace('-', '-').strip())
-                target = criteria['target']
-                tolerance = criteria['tolerance']
-                return target - tolerance <= val <= target + tolerance
-            except ValueError:
+            # Extract numeric value, handling units like "Deg", "Hz", etc.
+            val = self.extract_numeric_value(value)
+            if val is None:
                 return False
+            
+            target = criteria['target']
+            tolerance = criteria['tolerance']
+            return target - tolerance <= val <= target + tolerance
         
         return False
     
@@ -524,12 +547,12 @@ class TestResultProcessor:
                         # Store this value for future "greater than previous" comparisons
                         param_name = self.extract_param_name(line)
                         if param_name and value:
-                            try:
-                                # Try to store as float for numeric comparisons
-                                numeric_value = float(value.replace(' ', '').strip())
+                            # Try to extract numeric value (handles units like "Deg", "Hz", etc.)
+                            numeric_value = self.extract_numeric_value(value)
+                            if numeric_value is not None:
                                 self.previous_values[param_name] = numeric_value
-                            except ValueError:
-                                # If not numeric, store as string
+                            else:
+                                # Store as string if not numeric
                                 self.previous_values[param_name] = value
                     else:
                         # Could not extract value, leave as PASS/FAIL
