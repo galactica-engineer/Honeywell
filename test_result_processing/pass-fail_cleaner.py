@@ -448,7 +448,7 @@ class TestResultProcessor:
         # Store lines for cross-reference lookups
         self.file_lines = lines
         
-        stats = {'total': 0, 'passed': 0, 'failed': 0, 'unchanged': 0}
+        stats = {'total': 0, 'passed': 0, 'failed': 0, 'unchanged': 0, 'failed_lines': [], 'unchanged_lines': []}
         processed_lines = []
         
         i = 0
@@ -533,6 +533,7 @@ class TestResultProcessor:
                         if passed is None:
                             processed_lines.append(line)
                             stats['unchanged'] += 1
+                            stats['unchanged_lines'].append(i + 1)  # Line numbers are 1-indexed
                         else:
                             result = "PASS" if passed else "FAIL"
                             
@@ -540,6 +541,7 @@ class TestResultProcessor:
                                 stats['passed'] += 1
                             else:
                                 stats['failed'] += 1
+                                stats['failed_lines'].append(i + 1)  # Line numbers are 1-indexed
                             
                             # Reconstruct the line with the result
                             # Replace PASS/FAIL (with any trailing asterisks/spaces but not newlines) with clean result
@@ -560,10 +562,12 @@ class TestResultProcessor:
                         # Could not extract value, leave as PASS/FAIL
                         processed_lines.append(line)
                         stats['unchanged'] += 1
+                        stats['unchanged_lines'].append(i + 1)  # Line numbers are 1-indexed
                 else:
                     # No criteria found, leave as PASS/FAIL
                     processed_lines.append(line)
                     stats['unchanged'] += 1
+                    stats['unchanged_lines'].append(i + 1)  # Line numbers are 1-indexed
             else:
                 # Regular line, keep as-is
                 processed_lines.append(line)
@@ -648,6 +652,12 @@ def process_directory(directory: str, recursive: bool = False, output_dir: str =
             stats = processor.process_file(str(file_path), str(output_file))
             
             print(f"  ✓ {stats['total']} instances: {stats['passed']} PASS, {stats['failed']} FAIL, {stats['unchanged']} unchanged")
+            
+            # Show line numbers for failures and unchanged
+            if stats['failed'] > 0:
+                print(f"    FAIL at lines: {', '.join(map(str, stats['failed_lines']))}")
+            if stats['unchanged'] > 0:
+                print(f"    Unchanged at lines: {', '.join(map(str, stats['unchanged_lines']))}")
             
             total_stats['files_processed'] += 1
             total_stats['total_instances'] += stats['total']
@@ -741,7 +751,11 @@ def main():
             print(f"Total PASS/FAIL instances found: {stats['total']}")
             print(f"  - Resolved as PASS: {stats['passed']}")
             print(f"  - Resolved as FAIL: {stats['failed']}")
+            if stats['failed'] > 0:
+                print(f"    Line numbers: {', '.join(map(str, stats['failed_lines']))}")
             print(f"  - Left unchanged: {stats['unchanged']}")
+            if stats['unchanged'] > 0:
+                print(f"    Line numbers: {', '.join(map(str, stats['unchanged_lines']))}")
             print(f"\nOutput written to: {output_file}")
         
     except Exception as e:
