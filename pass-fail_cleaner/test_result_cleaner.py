@@ -540,8 +540,8 @@ class TestResultProcessor:
                                 stats['failed'] += 1
                             
                             # Reconstruct the line with the result
-                            # Preserve the original whitespace/tab structure
-                            processed_line = line.replace('PASS/FAIL', result)
+                            # Replace PASS/FAIL (with any trailing asterisks/spaces but not newlines) with clean result
+                            processed_line = re.sub(r'PASS/FAIL[\* ]*', result, line)
                             processed_lines.append(processed_line)
                         
                         # Store this value for future "greater than previous" comparisons
