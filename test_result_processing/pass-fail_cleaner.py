@@ -27,7 +27,10 @@ class TestResultProcessor:
     def __init__(self):
         self.criteria_pattern = re.compile(r'S/B\s+(.+?)(?:\s*\n|$)', re.IGNORECASE)
         # Match PASS/FAIL with optional trailing asterisks or other characters
+        # Pattern 1: PASS/FAIL on same line as value
         self.pass_fail_pattern = re.compile(r'^(.+?)\s+(PASS/FAIL)[\*\s]*$')
+        # Pattern 2: PASS/FAIL on its own line (with optional leading whitespace)
+        self.pass_fail_standalone_pattern = re.compile(r'^\s*(PASS/FAIL)[\*\s]*$')
         self.previous_values = {}  # Track previous values for "greater than previous" comparisons
         self.file_lines = []  # Store file lines for cross-reference lookups
         self.current_line_idx = 0  # Track current line being processed
@@ -458,13 +461,37 @@ class TestResultProcessor:
             # Update current line index for cross-reference lookups
             self.current_line_idx = i
             
-            # Check if this line ends with PASS/FAIL
-            match = self.pass_fail_pattern.match(line.rstrip())
-            if match:
+            # Check if PASS/FAIL is on standalone line first (before regular pattern)
+            standalone_match = self.pass_fail_standalone_pattern.match(line.rstrip())
+            # Then check if PASS/FAIL is on same line as value
+            match = self.pass_fail_pattern.match(line.rstrip()) if not standalone_match else None
+            
+            if match or standalone_match:
                 stats['total'] += 1
                 
-                # Extract the line content without PASS/FAIL
-                line_content = match.group(1)
+                # Determine if PASS/FAIL is on same line or standalone
+                if match:
+                    # PASS/FAIL on same line as value
+                    line_content = match.group(1)
+                    value_line_idx = i
+                else:
+                    # PASS/FAIL on its own line - look backwards for value line
+                    value_line_idx = None
+                    line_content = None
+                    for j in range(i - 1, max(i - 3, -1), -1):
+                        # Look for a line with = (the value line)
+                        if '=' in lines[j] and 'S/B' not in lines[j]:
+                            value_line_idx = j
+                            line_content = lines[j].rstrip()
+                            break
+                    
+                    if value_line_idx is None:
+                        # Couldn't find value line, leave unchanged
+                        processed_lines.append(line)
+                        stats['unchanged'] += 1
+                        stats['unchanged_lines'].append(i + 1)
+                        i += 1
+                        continue
                 
                 # Look for the criteria line (S/B)
                 # First check if the PASS/FAIL line itself contains S/B (e.g., "MP 285 S/B = VEN2.01/02 PASS/FAIL")
@@ -523,8 +550,13 @@ class TestResultProcessor:
                         else:
                             value = None
                     else:
-                        # For other criteria types, extract value from the PASS/FAIL line itself
-                        value = self.extract_value(line)
+                        # For other criteria types, extract value from the value line
+                        if standalone_match:
+                            # PASS/FAIL is on its own line, extract from value_line_idx
+                            value = self.extract_value(lines[value_line_idx])
+                        else:
+                            # PASS/FAIL on same line, extract from current line
+                            value = self.extract_value(line)
                     
                     if value is not None:
                         passed = self.check_value_against_criteria(value, criteria)
@@ -544,12 +576,19 @@ class TestResultProcessor:
                                 stats['failed_lines'].append(i + 1)  # Line numbers are 1-indexed
                             
                             # Reconstruct the line with the result
-                            # Replace PASS/FAIL (with any trailing asterisks/spaces but not newlines) with clean result
-                            processed_line = re.sub(r'PASS/FAIL[\* ]*', result, line)
-                            processed_lines.append(processed_line)
+                            if standalone_match:
+                                # PASS/FAIL is on its own line - just replace that line
+                                processed_line = re.sub(r'PASS/FAIL[\* ]*', result, line)
+                                processed_lines.append(processed_line)
+                            else:
+                                # PASS/FAIL on same line as value - replace in that line
+                                processed_line = re.sub(r'PASS/FAIL[\* ]*', result, line)
+                                processed_lines.append(processed_line)
                         
                         # Store this value for future "greater than previous" comparisons
-                        param_name = self.extract_param_name(line)
+                        # Use value line for parameter name extraction
+                        param_line = lines[value_line_idx] if standalone_match else line
+                        param_name = self.extract_param_name(param_line)
                         if param_name and value:
                             # Try to extract numeric value (handles units like "Deg", "Hz", etc.)
                             numeric_value = self.extract_numeric_value(value)
