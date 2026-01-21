@@ -93,15 +93,26 @@ class TestResultProcessor:
         Returns:
             True if file contains PASS/FAIL, False otherwise
         """
-        try:
-            with open(file_path, 'r', encoding='windows-1252') as f:
-                for line in f:
-                    if self.pass_fail_pattern.match(line.rstrip()):
-                        return True
-            return False
-        except Exception as e:
-            print(f"Warning: Could not check {file_path}: {e}", file=sys.stderr)
-            return False
+        # Try multiple encoding strategies
+        encodings_to_try = [
+            ('windows-1252', 'strict'),
+            ('latin-1', 'replace'),  # latin-1 can decode any byte, use replace for safety
+        ]
+        
+        for encoding, error_handling in encodings_to_try:
+            try:
+                with open(file_path, 'r', encoding=encoding, errors=error_handling) as f:
+                    for line in f:
+                        if self.pass_fail_pattern.match(line.rstrip()) or self.pass_fail_standalone_pattern.match(line.rstrip()):
+                            return True
+                return False
+            except Exception as e:
+                # Try next encoding
+                continue
+        
+        # If all encodings fail, warn and return False
+        print(f"Warning: Could not check {file_path} with any encoding", file=sys.stderr)
+        return False
     
     def parse_criteria(self, criteria_text: str) -> dict:
         """
@@ -443,10 +454,16 @@ class TestResultProcessor:
             raise FileNotFoundError(f"Input file not found: {input_path}")
         
         # Read all lines
-        # Use latin-1 encoding which maps bytes 0-255 directly to Unicode code points
-        # This preserves all characters including Windows-1252 special chars (en-dash, etc.)
-        with open(input_file, 'r', encoding='windows-1252') as f:
-            lines = f.readlines()
+        # Try Windows-1252 first, fall back to latin-1 with error replacement
+        # Windows-1252 has undefined bytes (0x81, 0x8D, 0x8F, 0x90, 0x9D) which cause errors
+        # Latin-1 can decode any byte value (0-255) but may not render special chars correctly
+        try:
+            with open(input_file, 'r', encoding='windows-1252') as f:
+                lines = f.readlines()
+        except UnicodeDecodeError:
+            # Fall back to latin-1 with error replacement for undefined bytes
+            with open(input_file, 'r', encoding='latin-1', errors='replace') as f:
+                lines = f.readlines()
         
         # Store lines for cross-reference lookups
         self.file_lines = lines
@@ -614,9 +631,14 @@ class TestResultProcessor:
             i += 1
         
         # Write output file
-        # Use latin-1 encoding to preserve special characters from input
-        with open(output_file, 'w', encoding='windows-1252') as f:
-            f.writelines(processed_lines)
+        # Try Windows-1252 first, fall back to latin-1 if needed
+        try:
+            with open(output_file, 'w', encoding='windows-1252') as f:
+                f.writelines(processed_lines)
+        except UnicodeEncodeError:
+            # Fall back to latin-1 which can encode any character in range 0-255
+            with open(output_file, 'w', encoding='latin-1', errors='replace') as f:
+                f.writelines(processed_lines)
         
         return stats
 
