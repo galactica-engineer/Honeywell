@@ -1,4 +1,4 @@
-# Test Result Cleaner - Changelog
+# Pass-Fail Cleaner - Changelog
 
 ## Version 3 (Current)
 
@@ -30,7 +30,7 @@ python test_result_cleaner.py -r /path/to/logs/ /path/to/output/
 
 ### Overview
 
-Version 2 of the Test Result Cleaner addresses all the false failures identified in the initial version. All 90 test instances now resolve correctly.
+Version 2 of the Pass-Fail Cleaner addresses all the false failures identified in the initial version. All 90 test instances now resolve correctly.
 
 ## Results Comparison
 

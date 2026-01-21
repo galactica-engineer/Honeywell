@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-Test Result Cleaner
+Pass-Fail Cleaner
 Processes test result files and resolves PASS/FAIL conditions based on criteria.
 
 This script identifies lines ending with PASS/FAIL and determines the actual result
 by comparing the measured value against the expected criteria ("S/B" = Should Be).
 
 Usage:
-  Single file:    python test_result_cleaner.py input.txt [output.txt]
-  Directory:      python test_result_cleaner.py /path/to/logs/
-  Recursive:      python test_result_cleaner.py -r /path/to/logs/
+  Single file:    python pass-fail_cleaner.py input.txt [output.txt]
+  Directory:      python pass-fail_cleaner.py /path/to/logs/
+  Recursive:      python pass-fail_cleaner.py -r /path/to/logs/
   
 Only creates output files for inputs that contain PASS/FAIL conditions.
 """
@@ -637,9 +637,9 @@ def process_directory(directory: str, recursive: bool = False, output_dir: str =
                 rel_path = file_path.relative_to(dir_path)
                 output_path = output_path / rel_path.parent
             output_path.mkdir(parents=True, exist_ok=True)
-            output_file = output_path / f"{file_path.stem}_cleaned{file_path.suffix}"
+            output_file = output_path / f"{file_path.stem}_processed{file_path.suffix}"
         else:
-            output_file = file_path.parent / f"{file_path.stem}_cleaned{file_path.suffix}"
+            output_file = file_path.parent / f"{file_path.stem}_processed{file_path.suffix}"
         
         print(f"\nProcessing: {file_path}")
         print(f"Output to:  {output_file}")
@@ -665,9 +665,9 @@ def main():
     """Main entry point for the script."""
     if len(sys.argv) < 2:
         print("Usage:")
-        print("  Single file:  python test_result_cleaner.py <input_file> [output_file]")
-        print("  Directory:    python test_result_cleaner.py <directory> [output_directory]")
-        print("  Recursive:    python test_result_cleaner.py -r <directory> [output_directory]")
+        print("  Single file:  python pass-fail_cleaner.py <input_file> [output_file]")
+        print("  Directory:    python pass-fail_cleaner.py <directory> [output_directory]")
+        print("  Recursive:    python pass-fail_cleaner.py -r <directory> [output_directory]")
         print("\nProcesses test result files to resolve PASS/FAIL conditions.")
         print("Only creates output files for inputs that contain PASS/FAIL conditions.")
         sys.exit(1)
@@ -729,7 +729,7 @@ def main():
             if output_path:
                 output_file = output_path
             else:
-                output_file = str(path.parent / f"{path.stem}_cleaned{path.suffix}")
+                output_file = str(path.parent / f"{path.stem}_processed{path.suffix}")
             
             print(f"Processing: {input_path}")
             print(f"Output to: {output_file}")

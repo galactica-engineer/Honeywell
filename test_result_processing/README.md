@@ -1,4 +1,4 @@
-# Test Result Cleaner
+# Pass-Fail Cleaner
 
 This script processes test result files and resolves PASS/FAIL conditions based on specified criteria.
 
@@ -11,7 +11,7 @@ The script identifies lines ending with `PASS/FAIL` and determines the actual re
 ### Single File
 
 ```bash
-python test_result_cleaner.py <input_file> [output_file]
+python pass-fail_cleaner.py <input_file> [output_file]
 ```
 
 **Arguments:**
@@ -21,18 +21,18 @@ python test_result_cleaner.py <input_file> [output_file]
 
 **Example:**
 ```bash
-python test_result_cleaner.py test_results.txt
+python pass-fail_cleaner.py test_results.txt
 # Creates: test_results_cleaned.txt (only if PASS/FAIL conditions exist)
 
-python test_result_cleaner.py input.txt output.txt
+python pass-fail_cleaner.py input.txt output.txt
 # Custom output filename
 ```
 
 ### Directory Processing
 
 ```bash
-python test_result_cleaner.py <directory> [output_directory]
-python test_result_cleaner.py -r <directory> [output_directory]
+python pass-fail_cleaner.py <directory> [output_directory]
+python pass-fail_cleaner.py -r <directory> [output_directory]
 ```
 
 **Arguments:**
@@ -43,15 +43,15 @@ python test_result_cleaner.py -r <directory> [output_directory]
 **Examples:**
 ```bash
 # Process all files in a directory (non-recursive)
-python test_result_cleaner.py /path/to/logs/
+python pass-fail_cleaner.py /path/to/logs/
 # Creates *_cleaned.txt files in /path/to/logs/ for each file with PASS/FAIL
 
 # Process directory recursively
-python test_result_cleaner.py -r /path/to/logs/
+python pass-fail_cleaner.py -r /path/to/logs/
 # Processes all files in /path/to/logs/ and subdirectories
 
 # Specify output directory
-python test_result_cleaner.py -r /path/to/logs/ /path/to/output/
+python pass-fail_cleaner.py -r /path/to/logs/ /path/to/output/
 # Preserves directory structure in output location
 ```
 
