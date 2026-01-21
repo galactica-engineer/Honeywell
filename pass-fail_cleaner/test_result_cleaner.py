@@ -485,9 +485,10 @@ class TestResultProcessor:
                             param_name = param_match.group(1).strip()
                             
                             # Look backwards for the value line: "PARAM = VALUE" or "PARAM: VALUE"
+                            # Use STRICT matching - only accept exact parameter name matches
                             value = None
                             for j in range(i - 1, max(i - 20, -1), -1):
-                                # Look for lines with this param and = or : but not S/B
+                                # Look for lines with this exact param and = or : but not S/B
                                 if param_name in lines[j] and ('=' in lines[j] or ':' in lines[j]) and 'S/B' not in lines[j]:
                                     # Extract the value (after = or :)
                                     val_match = re.search(r'[=:]\s*(.*)$', lines[j].strip())
